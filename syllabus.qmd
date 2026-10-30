@@ -12,7 +12,7 @@ editor_options:
 
 ```{css, echo=FALSE}
 /* ---- BSTA 504 color palette ---- */
-/* Amethyst for tables and the key box; pumpkin only for warnings */
+/* Amethyst for the key box, charcoal for tables; pumpkin only for warnings */
 :root {
   --accent: #7A5590;       /* deep amethyst: headers, sub-headers, key box */
   --accent-light: #9C7BAC; /* amethyst: borders */
@@ -20,6 +20,8 @@ editor_options:
   --neutral: #D9D4DE;      /* soft gray-lavender: borders of neutral boxes */
   --warn: #C2570F;         /* pumpkin, darker for text: "Never allowed" only */
   --body: #3E3F3A;
+  --charcoal: #4A4B4B;     /* table headers */
+  --table-stripe: #F4F4F4; /* light gray: alternate table rows */
   /* Section header colors: add {.sec1} ... {.sec4} after a ## header */
   --sec1-text: #7A5590; --sec1-tint: #F4F0F7;   /* amethyst / light lavender */
   --sec2-text: #C2570F; --sec2-tint: #FEF6F4;   /* pumpkin / snow */
@@ -40,8 +42,8 @@ section.level3 > h3 { color: #212529; margin-top: 1.75rem; font-weight: 600; }
 section.level4 > h4 { color: var(--body); margin-top: 1.25rem; }
 .lead { font-size: 1.15em; }
 
-main table thead th { background-color: var(--accent) !important; color: white !important; border-bottom: none; }
-main table tbody tr:nth-child(even) { background-color: var(--tint); }
+main table thead th { background-color: var(--charcoal) !important; color: white !important; border-bottom: none; }
+main table tbody tr:nth-child(even) { background-color: var(--table-stripe); }
 
 .yes, .no { display: inline-block; min-width: 3em; padding: 0.1em 0.6em; border-radius: 999px;
   color: white; font-weight: 600; font-size: 0.9em; }
