@@ -11,44 +11,44 @@ editor_options:
 ---
 
 ```{css, echo=FALSE}
-/* ---- Lesson color palette ---- */
+/* ---- BSTA 504 color palette ---- */
 :root {
-  --blue: #5BAFF8;   --dark-blue: #3070BF;
-  --pink: #EF85B3;   --pink2: #BF396F;
-  --orange:  #C44546; --red: #C83532;
-  --purple: #8043F3; --purple2: #9F71F7;
-  --slate-grey: #6C757D;
-  --green: #367B79;  --green2: #459B99;
-  --ivory: #FDF3F2;
-  --sec: var(--dark-blue);       /* section color (set per section below) */
-  --sec-light: var(--blue);
-  --sec-text: var(--sec);        /* color for sub-headers and bold text */
+  --amethyst: #9C7BAC;  --amethyst-text: #7A5590;
+  --pumpkin: #FF7F2D;   --pumpkin-text: #C2570F;
+  --sage: #7CB078;      --sage-text: #3F7A3B;
+  --cool-sky: #4CB1FF;  --sky-text: #1A73B8;
+  --pale-sky: #D0E6FF;
+  --charcoal: #4A4B4B;
+  --mint-cream: #F5FAF5; --alice-blue: #F2F8FC;
+  --snow: #FEF6F4;       --ghost-white: #F5F6FC;
+  --sec: var(--cool-sky);        /* section color (set per section below) */
+  --sec-text: var(--sky-text);   /* darker shade for text */
+  --sec-tint: var(--alice-blue); /* light background */
 }
- 
+
 .title{
   font-size: 30px;
-  color: var(--dark-blue);
+  color: var(--charcoal);
   background-color: #fff;
   padding: 0px;
 }
- 
+
 /* ---- Section colors: add {.sec-___} after a ## header ---- */
-.sec-blue   { --sec: var(--dark-blue); --sec-light: var(--blue); }
-.sec-green  { --sec: var(--green);     --sec-light: var(--green2); }
-.sec-purple { --sec: var(--purple);    --sec-light: var(--purple2); }
-.sec-pink   { --sec: var(--pink2);     --sec-light: var(--pink); }
-.sec-red    { --sec: var(--red);       --sec-light: var(--orange); }
-.sec-coral  { --sec: var(--orange);    --sec-light: #F29B9B; --sec-text: #C44546; } /* darker coral for text so it's readable */
-.sec-blue, .sec-green, .sec-purple, .sec-pink, .sec-red { --sec-text: var(--sec); }
- 
-/* Main headers: block of color */
+.sec-blue     { --sec: var(--cool-sky); --sec-text: var(--sky-text);      --sec-tint: var(--alice-blue); }
+.sec-green    { --sec: var(--sage);     --sec-text: var(--sage-text);     --sec-tint: var(--mint-cream); }
+.sec-coral    { --sec: var(--pumpkin);  --sec-text: var(--pumpkin-text);  --sec-tint: var(--snow); }
+.sec-pink     { --sec: var(--amethyst); --sec-text: var(--amethyst-text); --sec-tint: var(--ghost-white); }
+
+/* Main headers: tinted block with a bold color bar */
 section.level2 > h2 {
-  background-color: var(--sec);
-  color: white;
+  background-color: var(--sec-tint);
+  color: var(--sec-text);
+  border-left: 10px solid var(--sec);
   padding: 0.45em 0.8em;
   border-radius: 10px;
   border-bottom: none;
   margin-top: 2.5rem;
+  font-weight: 700;
 }
 /* Sub-headers: colored text */
 section.level3 > h3 {
@@ -59,72 +59,54 @@ section.level4 > h4 {
   color: var(--sec-text);
   margin-top: 1.25rem;
 }
- 
+
 /* Bold text picks up the section color */
 main p strong, main li strong { color: var(--sec-text); }
- 
-/* Friendly opening paragraph */
-.lead { font-size: 1.15em; }
- 
+
 /* Tables */
 main table thead th {
-  background-color: var(--sec);
-  color: white;
+  background-color: var(--charcoal) !important;
+  color: white !important;
   border-bottom: none;
 }
-main table tbody tr:nth-child(even) { background-color: var(--ivory); }
- 
-/* Yes / No pills in the AI table: [Yes]{.yes} [No]{.no} */
-.yes, .no {
-  display: inline-block;
-  min-width: 3em;
-  padding: 0.1em 0.6em;
-  border-radius: 999px;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9em;
-}
-.yes { background-color: var(--green); }
-.no  { background-color: var(--red); }
- 
-/* Block quotes (e.g., AI Use Statement example) */
+main table tbody tr:nth-child(even) { background-color: var(--sec-tint); }
+
+/* Block quotes */
 main blockquote {
-  background-color: var(--ivory);
-  border-left: 6px solid var(--sec-light);
+  background-color: var(--sec-tint);
+  border-left: 6px solid var(--sec);
   padding: 0.75em 1em;
   border-radius: 0 10px 10px 0;
   color: black;
 }
- 
+
 /* ---- Colored boxes: ::::: blue / ::: blue-ttl / ::: blue-cont ---- */
-.blue   { --box: var(--blue); }
-.pink   { --box: var(--pink2); }
-.green  { --box: var(--green); }
-.red    { --box: var(--red); }
-.purple { --box: var(--purple); }
- 
-.blue, .pink, .green, .red, .purple {
+.blue   { --box: var(--cool-sky); --box-text: var(--sky-text); }
+.green  { --box: var(--sage);     --box-text: var(--sage-text); }
+.red    { --box: var(--pumpkin);  --box-text: var(--pumpkin-text); }
+.purple { --box: var(--amethyst); --box-text: var(--amethyst-text); }
+
+.blue, .green, .red, .purple {
   margin: 1em 0;
   border: 3px solid var(--box);
   border-radius: 10px;
+  overflow: hidden;
 }
-.blue-ttl, .pink-ttl, .green-ttl, .red-ttl, .purple-ttl {
+.blue-ttl, .green-ttl, .red-ttl, .purple-ttl {
   padding: 5px 15px 0.1em 15px;
   color: white;
-  background-color: var(--box);
+  background-color: var(--box-text);
   font-weight: 600;
   font-size: 1em;
 }
-.blue-cont, .pink-cont, .green-cont, .red-cont, .purple-cont {
+.blue-cont, .green-cont, .red-cont, .purple-cont {
   padding: 8px 15px 2px 15px;
   color: black;
   background-color: white;
-  border-radius: 10px;
 }
-.blue-ttl p, .pink-ttl p, .green-ttl p, .red-ttl p, .purple-ttl p { margin: 0 0 4px 0; }
-.blue-cont strong, .pink-cont strong, .green-cont strong,
-.red-cont strong, .purple-cont strong { color: var(--box); }
-.blue-cont strong { color: var(--dark-blue); }  /* light blue is too faint for text */
+.blue-ttl p, .green-ttl p, .red-ttl p, .purple-ttl p { margin: 0 0 4px 0; }
+.blue-cont strong, .green-cont strong,
+.red-cont strong, .purple-cont strong { color: var(--box-text); }
 ```
 
 ```{r setup, include=FALSE}

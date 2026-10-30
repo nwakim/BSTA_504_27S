@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-38b34caf02fe584a8c3dce88b012349b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-53a648127b41f3f6af6517d23030684f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -115,62 +115,64 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
-/* ---- Lesson color palette ---- */
+/* ---- BSTA 504 color palette ---- */
 :root {
-  --blue: #5BAFF8;   --dark-blue: #3070BF;
-  --pink: #EF85B3;   --pink2: #BF396F;
-  --orange: #E75B5C; --red: #C83532;
-  --green: #367B79;  --green2: #459B99;
-  --ivory: #FDF3F2;
-  --coral-text: #C44546;  /* darker coral so text stays readable */
+  --amethyst: #9C7BAC;  --amethyst-text: #7A5590;
+  --pumpkin: #FF7F2D;   --pumpkin-text: #C2570F;
+  --sage: #7CB078;      --sage-text: #3F7A3B;
+  --cool-sky: #4CB1FF;  --sky-text: #1A73B8;
+  --pale-sky: #D0E6FF;
+  --charcoal: #4A4B4B;
+  --mint-cream: #F5FAF5; --alice-blue: #F2F8FC;
+  --snow: #FEF6F4;       --ghost-white: #F5F6FC;
 }
 
 /* ---- Welcome banner ---- */
 .hero {
-  background: linear-gradient(135deg, var(--dark-blue) 0%, #2A5FA3 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--pale-sky) 0%, var(--alice-blue) 100%);
+  border-top: 8px solid var(--cool-sky);
+  color: var(--charcoal);
   border-radius: 16px;
   padding: 2rem 2rem 1.5rem 2rem;
   margin-bottom: 1.5rem;
-  align-items: center;
 }
 .hero h2 {
-  color: white;
+  color: var(--charcoal);
   border-bottom: none;
   margin-top: 0;
   font-size: 2.1rem;
   font-weight: 700;
 }
-.hero img { border-radius: 12px; }
 .term-pill {
   display: inline-block;
-  background-color: var(--blue);
-  color: white;
+  background-color: var(--pumpkin);
+  color: var(--charcoal);
   font-weight: 700;
   padding: 0.2em 0.9em;
   border-radius: 999px;
   margin-bottom: 0.75rem;
 }
 .hero-text { font-size: 1.08rem; line-height: 1.6; }
+.hero-text strong { color: var(--sky-text); }
 
 /* Buttons in the banner */
 .hero-btn {
   display: inline-block;
   background-color: white;
-  color: var(--dark-blue) !important;
+  color: var(--charcoal) !important;
   font-weight: 700;
   text-decoration: none;
   padding: 0.45em 1.1em;
   border-radius: 999px;
   margin: 0.25rem 0.4rem 0.25rem 0;
-  border: 2px solid white;
+  border: 2px solid var(--cool-sky);
 }
-.hero-btn:hover { background-color: transparent; color: white !important; }
+.hero-btn:hover { background-color: var(--cool-sky); color: white !important; }
 
 /* ---- Info cards ---- */
 .info-card {
-  background-color: white;
-  border: 1px solid #E9E4E2;
+  background-color: var(--card-bg);
+  border: 1px solid #E6E8EE;
   border-top: 6px solid var(--card);
   border-radius: 12px;
   padding: 1rem 1.25rem 0.5rem 1.25rem;
@@ -185,16 +187,18 @@ ul.task-list li input[type="checkbox"] {
 }
 .info-card .icon { color: var(--card); }
 .info-card p { margin-bottom: 0.6rem; }
-.card-blue  { --card: var(--dark-blue); --card-text: var(--dark-blue); }
-.card-green { --card: var(--green);     --card-text: var(--green); }
-.card-coral { --card: var(--orange);    --card-text: var(--coral-text); }
-.card-pink  { --card: var(--pink2);     --card-text: var(--pink2); }
+.card-sage     { --card: var(--sage);     --card-text: var(--sage-text);     --card-bg: var(--mint-cream); }
+.card-pumpkin  { --card: var(--pumpkin);  --card-text: var(--pumpkin-text);  --card-bg: var(--snow); }
+.card-amethyst { --card: var(--amethyst); --card-text: var(--amethyst-text); --card-bg: var(--ghost-white); }
 
 .cards-band {
-  background-color: var(--ivory);
+  background-color: var(--alice-blue);
+  border-left: 8px solid var(--cool-sky);
   border-radius: 16px;
   padding: 1.5rem;
 }
+.cards-band h3 { color: var(--sky-text); }
+.cards-band .icon { color: var(--cool-sky); }
 
 .source-link { text-align: right; color: #6C757D; }
 </style>
@@ -208,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
-<section id="instructor" class="level3 info-card card-green">
+<section id="instructor" class="level3 info-card card-sage">
 <h3 class="anchored" data-anchor-id="instructor">Instructor</h3>
 <p><span class="icon"><iconify-icon inline="" icon="fluent:person-24-filled" style="font-size: 24px;"></iconify-icon></span> Dr.&nbsp;Nicky Wakim</p>
 <p><span class="icon"><iconify-icon inline="" icon="bi:building-fill" style="font-size: 24px;"></iconify-icon></span> Vanport 622A</p>
@@ -216,14 +220,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div class="g-col-12 g-col-md-4">
-<section id="office-hours" class="level3 info-card card-coral">
+<section id="office-hours" class="level3 info-card card-pumpkin">
 <h3 class="anchored" data-anchor-id="office-hours">Office Hours</h3>
 <p><span class="icon"><iconify-icon inline="" icon="icon-park-solid:time" style="font-size: 24px;"></iconify-icon></span> Times to be announced</p>
 <p><span class="icon"><iconify-icon inline="" icon="mdi:calendar-clock" style="font-size: 24px;"></iconify-icon></span> Two lessons a week, 3 hours of class time</p>
 </section>
 </div>
 <div class="g-col-12 g-col-md-4">
-<section id="contacting-me" class="level3 info-card card-pink">
+<section id="contacting-me" class="level3 info-card card-amethyst">
 <h3 class="anchored" data-anchor-id="contacting-me">Contacting me</h3>
 <p><span class="icon"><iconify-icon inline="" icon="tabler:message-circle-filled" style="font-size: 24px;"></iconify-icon></span> E-mail is the best way to reach me. I try to respond to all course-related e-mails within 24 hours, Monday-Friday.</p>
 </section>

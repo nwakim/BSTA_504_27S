@@ -11,30 +11,34 @@ format:
 ```{css, echo=FALSE}
 .title{
   font-size: 30px;
-  color: #3070BF;
+  color: #4A4B4B;
   background-color: #fff;
   padding: 0px;
 }
 
 .sched table tbody tr:has(.pract-row) td,
 .sched table tbody tr:has(.lab-row) td{
-  background-color: #FCF6F1 !important;
-  color: #E89543;
+  background-color: #FEF6F4 !important;
+  color: #C2570F;
 }
 
 .sched table tbody tr:has(.quiz-row) td{
-  background-color: #F4F7FC !important;
-  color: #6B8CC4;
+  background-color: #F2F8FC !important;
+  color: #1A73B8;
 }
 
 .sched table tbody tr:has(.proj-row) td{
-  background-color: #FEF6F7 !important;
-  color: #F08897;
+  background-color: #F5F6FC !important;
+  color: #7A5590;
 }
+
+/* Links in due rows match the row color */
+.sched table tbody tr:has(.pract-row) a,
+.sched table tbody tr:has(.proj-row) a { color: inherit; }
 
 /* ---- Blank separator rows: any row whose cells are all empty turns blue ---- */
 .sched table tbody tr:not(:has(td:not(:empty))) td {
-  background-color: #3070BF !important;
+  background-color: #4CB1FF !important;
   box-shadow: none !important;   /* stops Bootstrap's striping from covering it */
   padding: 0 !important;
   height: 10px;
