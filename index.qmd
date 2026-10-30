@@ -5,39 +5,42 @@ page-layout: full
 link-external-newwindow: true
 ---
 
+```{r setup, include=FALSE}
+library(here)
+source(here("class_dates.R"))
+```
+
 ```{=html}
 <style>
 /* ---- BSTA 504 color palette ---- */
 :root {
-  --amethyst: #9C7BAC;  --amethyst-text: #7A5590;
-  --pumpkin: #FF7F2D;   --pumpkin-text: #C2570F;
-  --sage: #7CB078;      --sage-text: #3F7A3B;
-  --cool-sky: #4CB1FF;  --sky-text: #1A73B8;
+  --amethyst: #9C7BAC;  --amethyst-deep: #7A5590;
+  --pumpkin:  #FF7F2D;  --pumpkin-text:  #C2570F;
+  --sage:     #7CB078;  --sage-text:     #3F7A3B;
+  --cool-sky: #4CB1FF;  --sky-text:      #1A73B8;
   --pale-sky: #D0E6FF;
   --charcoal: #4A4B4B;
-  --mint-cream: #F5FAF5; --alice-blue: #F2F8FC;
-  --snow: #FEF6F4;       --ghost-white: #F5F6FC;
 }
 
 /* ---- Welcome banner ---- */
 .hero {
-  background: linear-gradient(135deg, var(--pale-sky) 0%, var(--alice-blue) 100%);
-  border-top: 8px solid var(--cool-sky);
-  color: var(--charcoal);
+  background-color: var(--amethyst-deep);
+  color: white;
   border-radius: 16px;
   padding: 2rem 2rem 1.5rem 2rem;
   margin-bottom: 1.5rem;
+  align-items: center;
 }
-.hero h2 {
-  color: var(--charcoal);
+.hero h1 {
+  color: white;
   border-bottom: none;
   margin-top: 0;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 .term-pill {
   display: inline-block;
-  background-color: var(--pumpkin);
+  background-color: var(--pale-sky);
   color: var(--charcoal);
   font-weight: 700;
   padding: 0.2em 0.9em;
@@ -45,26 +48,30 @@ link-external-newwindow: true
   margin-bottom: 0.75rem;
 }
 .hero-text { font-size: 1.08rem; line-height: 1.6; }
-.hero-text strong { color: var(--sky-text); }
+.hero-text strong { color: white; }
+.hero-text a { color: white; }
 
 /* Buttons in the banner */
 .hero-btn {
   display: inline-block;
   background-color: white;
-  color: var(--charcoal) !important;
+  color: var(--amethyst-deep) !important;
   font-weight: 700;
   text-decoration: none;
   padding: 0.45em 1.1em;
   border-radius: 999px;
   margin: 0.25rem 0.4rem 0.25rem 0;
-  border: 2px solid var(--cool-sky);
+  border: 2px solid white;
 }
-.hero-btn:hover { background-color: var(--cool-sky); color: white !important; }
+.hero-btn:hover { background-color: transparent; color: white !important; }
 
 /* ---- Info cards ---- */
+.cards-band {
+  padding: 0.5rem 0;
+}
 .info-card {
-  background-color: var(--card-bg);
-  border: 1px solid #E6E8EE;
+  background-color: white;
+  border: 1px solid #E4DFD7;
   border-top: 6px solid var(--card);
   border-radius: 12px;
   padding: 1rem 1.25rem 0.5rem 1.25rem;
@@ -79,38 +86,35 @@ link-external-newwindow: true
 }
 .info-card .icon { color: var(--card); }
 .info-card p { margin-bottom: 0.6rem; }
-.card-sage     { --card: var(--sage);     --card-text: var(--sage-text);     --card-bg: var(--mint-cream); }
-.card-pumpkin  { --card: var(--pumpkin);  --card-text: var(--pumpkin-text);  --card-bg: var(--snow); }
-.card-amethyst { --card: var(--amethyst); --card-text: var(--amethyst-text); --card-bg: var(--ghost-white); }
+.card-pumpkin  { --card: var(--pumpkin);  --card-text: var(--pumpkin-text); }
+.card-sky      { --card: var(--cool-sky); --card-text: var(--sky-text); }
+.card-sage     { --card: var(--sage);     --card-text: var(--sage-text); }
+.card-amethyst { --card: var(--amethyst); --card-text: var(--amethyst-deep); }
 
-.cards-band {
-  background-color: var(--alice-blue);
-  border-left: 8px solid var(--cool-sky);
-  border-radius: 16px;
-  padding: 1.5rem;
-}
-.cards-band h3 { color: var(--sky-text); }
-.cards-band .icon { color: var(--cool-sky); }
-
-.source-link { text-align: right; color: #6C757D; }
+.source-link { text-align: right; color: #6C757D; margin-top: 1rem; }
 </style>
 ```
 
 ::: hero
-## BSTA 504: Introduction to Health Data Science
+# BSTA 504: Introduction to Health Data Science
 
 [Spring 2027]{.term-pill}
 
 ::: hero-text
-This course introduces the ideas, practices, and applications of health data science in public health and the biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: **the command line, version control, reproducible environments, relational databases and SQL, and Python.** You'll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.
+**Welcome to Health Data Science!**
+
+This course introduces the ideas, practices, and applications of health data science in public health and the biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: the command line, version control, reproducible environments, relational databases and SQL, and Python. You'll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.
+
+**Before the first lesson, apply for [GitHub Education](https://education.github.com/students)**, since approval can take several days. The full list of steps is in the [Week 1 setup assignment](syllabus.qmd#week-1-setup-assignment).
 :::
 
 [Syllabus](syllabus.qmd){.hero-btn} [Schedule](schedule.qmd){.hero-btn} [GitHub Education](https://education.github.com/students){.hero-btn}
 :::
 
+::: cards-band
 ::: grid
-::: {.g-col-12 .g-col-md-4}
-::: {.info-card .card-sage}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.info-card .card-pumpkin}
 ### Instructor
 
 [{{< iconify fluent person-24-filled size=24px >}}]{.icon} Dr. Nicky Wakim
@@ -121,29 +125,36 @@ This course introduces the ideas, practices, and applications of health data sci
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
-::: {.info-card .card-pumpkin}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.info-card .card-sky}
 ### Office Hours
 
 [{{< iconify icon-park-solid time size=24px >}}]{.icon} Times to be announced
-
-[{{< iconify mdi calendar-clock size=24px >}}]{.icon} Two lessons a week, 3 hours of class time
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.info-card .card-sage}
+### Course details
+
+[{{< iconify fa6-solid calendar-days size=24px >}}]{.icon} Two lessons a week
+
+[{{< iconify fa6-solid calendar size=24px >}}]{.icon} `{r} w1d1 %>% format("%m/%d")` - `{r} w10d2 %>% format("%m/%d")`
+
+[{{< iconify icon-park-solid time size=24px >}}]{.icon} 3 hours of class time per week
+
+[{{< iconify fa6-solid person-chalkboard size=24px >}}]{.icon} Room to be announced
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
 ::: {.info-card .card-amethyst}
 ### Contacting me
 
-[{{< iconify tabler message-circle-filled size=24px >}}]{.icon} E-mail is the best way to reach me. I try to respond to all course-related e-mails within 24 hours, Monday-Friday.
+[{{< iconify tabler mail-filled size=24px >}}]{.icon} E-mail is the best way to reach me. I try to respond to all course-related e-mails within 24 hours, Monday-Friday.
 :::
 :::
 :::
-
-::: {.cards-band .mt-4}
-### Before the first class
-
-[{{< iconify mdi github size=24px >}}]{.icon} Create a GitHub account and **apply for [GitHub Education](https://education.github.com/students) at or before the first lesson**, since approval can take several days. The full list of steps is in the [Week 1 setup assignment](syllabus.qmd#week-1-setup-assignment).
 :::
 
 ::: source-link
