@@ -24,7 +24,7 @@ source(here("class_dates.R"))
 
 /* ---- Welcome banner ---- */
 .hero {
-  background-color: var(--amethyst);
+  background-color: var(--amethyst-deep);
   color: white;
   border-radius: 16px;
   padding: 2rem 2rem 1.5rem 2rem;
