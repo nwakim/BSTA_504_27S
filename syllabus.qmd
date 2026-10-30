@@ -13,100 +13,52 @@ editor_options:
 ```{css, echo=FALSE}
 /* ---- BSTA 504 color palette ---- */
 :root {
-  --amethyst: #9C7BAC;  --amethyst-text: #7A5590;
-  --pumpkin: #FF7F2D;   --pumpkin-text: #C2570F;
-  --sage: #7CB078;      --sage-text: #3F7A3B;
-  --cool-sky: #4CB1FF;  --sky-text: #1A73B8;
-  --pale-sky: #D0E6FF;
-  --charcoal: #4A4B4B;
-  --mint-cream: #F5FAF5; --alice-blue: #F2F8FC;
-  --snow: #FEF6F4;       --ghost-white: #F5F6FC;
-  --sec: var(--cool-sky);        /* section color (set per section below) */
-  --sec-text: var(--sky-text);   /* darker shade for text */
-  --sec-tint: var(--alice-blue); /* light background */
+  --key: #7A5590;     --key-text: #7A5590;                              /* amethyst */
+  --sec1: #7A5590; --sec1-light: #9C7BAC; --sec1-text: #7A5590;          /* amethyst */
+  --sec2: #E2671E; --sec2-light: #FF7F2D; --sec2-text: #C2570F;          /* pumpkin (darker for text) */
+  --sec3: #2E8FDB; --sec3-light: #4CB1FF; --sec3-text: #1A73B8;          /* cool sky (darker for text) */
+  --sec4: #5A9A56; --sec4-light: #7CB078; --sec4-text: #3F7A3B;          /* sage (darker for text) */
+  --tint: #F5F6FC;  --yes: #3F7A3B;  --no: #C2570F;  --warm: #E2671E;
+  --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text);
 }
+.title{ font-size: 40px; color: var(--key-text); background-color: #fff; padding: 0px; }
 
-.title{
-  font-size: 30px;
-  color: var(--amethyst-text);
-  background-color: #fff;
-  padding: 0px;
-}
+/* Section colors: add {.sec1} ... {.sec4} after a ## header */
+.sec1 { --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); }
+.sec2 { --sec: var(--sec2); --sec-light: var(--sec2-light); --sec-text: var(--sec2-text); }
+.sec3 { --sec: var(--sec3); --sec-light: var(--sec3-light); --sec-text: var(--sec3-text); }
+.sec4 { --sec: var(--sec4); --sec-light: var(--sec4-light); --sec-text: var(--sec4-text); }
 
-/* ---- Section colors: add {.sec-___} after a ## header ---- */
-.sec-blue     { --sec: var(--cool-sky); --sec-text: var(--sky-text);      --sec-tint: var(--alice-blue); }
-.sec-green    { --sec: var(--sage);     --sec-text: var(--sage-text);     --sec-tint: var(--mint-cream); }
-.sec-coral    { --sec: var(--pumpkin);  --sec-text: var(--pumpkin-text);  --sec-tint: var(--snow); }
-.sec-pink     { --sec: var(--amethyst); --sec-text: var(--amethyst-text); --sec-tint: var(--ghost-white); }
-
-/* Main headers: tinted block with a bold color bar */
-section.level2 > h2 {
-  background-color: var(--sec-tint);
-  color: var(--sec-text);
-  border-left: 10px solid var(--sec);
-  padding: 0.45em 0.8em;
-  border-radius: 10px;
-  border-bottom: none;
-  margin-top: 2.5rem;
-  font-weight: 700;
-}
-/* Sub-headers: colored text */
-section.level3 > h3 {
-  color: var(--sec-text);
-  margin-top: 1.75rem;
-}
-section.level4 > h4 {
-  color: var(--sec-text);
-  margin-top: 1.25rem;
-}
-
-/* Bold text picks up the section color */
+section.level2 > h2 { background-color: var(--sec); color: white; padding: 0.45em 0.8em;
+  border-radius: 10px; border-bottom: none; margin-top: 2.5rem; }
+section.level3 > h3 { color: var(--sec-text); margin-top: 1.75rem; }
+section.level4 > h4 { color: var(--sec-text); margin-top: 1.25rem; }
 main p strong, main li strong { color: var(--sec-text); }
+.lead { font-size: 1.15em; }
 
-/* Tables */
-main table thead th {
-  background-color: var(--amethyst) !important;
-  color: white !important;
-  border-bottom: none;
-}
-main table tbody tr:nth-child(even) { background-color: var(--sec-tint); }
+main table thead th { background-color: var(--sec) !important; color: white !important; border-bottom: none; }
+main table tbody tr:nth-child(even) { background-color: var(--tint); }
 
-/* Block quotes */
-main blockquote {
-  background-color: var(--sec-tint);
-  border-left: 6px solid var(--sec);
-  padding: 0.75em 1em;
-  border-radius: 0 10px 10px 0;
-  color: black;
-}
+.yes, .no { display: inline-block; min-width: 3em; padding: 0.1em 0.6em; border-radius: 999px;
+  color: white; font-weight: 600; font-size: 0.9em; }
+.yes { background-color: var(--yes); }
+.no  { background-color: var(--no); }
 
-/* ---- Colored boxes: ::::: blue / ::: blue-ttl / ::: blue-cont ---- */
-.blue   { --box: var(--cool-sky); --box-text: var(--sky-text); }
-.green  { --box: var(--sage);     --box-text: var(--sage-text); }
-.red    { --box: var(--pumpkin);  --box-text: var(--pumpkin-text); }
-.purple { --box: var(--amethyst); --box-text: var(--amethyst-text); }
+main blockquote { background-color: var(--tint); border-left: 6px solid var(--sec-light);
+  padding: 0.75em 1em; border-radius: 0 10px 10px 0; color: black; }
 
-.blue, .green, .red, .purple {
-  margin: 1em 0;
-  border: 3px solid var(--box);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.blue-ttl, .green-ttl, .red-ttl, .purple-ttl {
-  padding: 5px 15px 0.1em 15px;
-  color: white;
-  background-color: var(--box-text);
-  font-weight: 600;
-  font-size: 1em;
-}
-.blue-cont, .green-cont, .red-cont, .purple-cont {
-  padding: 8px 15px 2px 15px;
-  color: black;
-  background-color: white;
-}
-.blue-ttl p, .green-ttl p, .red-ttl p, .purple-ttl p { margin: 0 0 4px 0; }
-.blue-cont strong, .green-cont strong,
-.red-cont strong, .purple-cont strong { color: var(--box-text); }
+/* Boxes: ::::: blue (key info) / warm / accent / stop */
+.blue   { --box: var(--key);  --box-text: var(--key-text); }
+.warm   { --box: var(--warm); --box-text: var(--sec2-text); }
+.accent { --box: var(--sec3); --box-text: var(--sec3-text); }
+.stop   { --box: var(--no);   --box-text: var(--no); }
+.blue, .warm, .accent, .stop { margin: 1em 0; border: 3px solid var(--box); border-radius: 10px; }
+.blue-ttl, .warm-ttl, .accent-ttl, .stop-ttl { padding: 5px 15px 0.1em 15px; color: white;
+  background-color: var(--box); font-weight: 600; font-size: 1em; }
+.blue-ttl p, .warm-ttl p, .accent-ttl p, .stop-ttl p { margin: 0 0 4px 0; }
+.blue-cont, .warm-cont, .accent-cont, .stop-cont { padding: 8px 15px 2px 15px; color: black;
+  background-color: white; border-radius: 10px; }
+.blue-cont strong, .warm-cont strong, .accent-cont strong, .stop-cont strong { color: var(--box-text); }
 ```
 
 ```{r setup, include=FALSE}
@@ -136,9 +88,11 @@ Key Course Info
 :::
 :::::
 
-## Description {.sec-blue}
+## Description {.sec1}
 
+::: lead
 Welcome to BSTA 504! This course introduces the ideas, practices, and applications of health data science in the context of public health and biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: **the command line, version control, reproducible environments, relational databases and SQL, and Python.** You'll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.
+:::
 
 **Prerequisites:** BSTA 513 (Categorical Data Analysis) or BSTA 526 (R Programming for Health Data Science)
 
@@ -156,7 +110,7 @@ By the end of this course, you should be able to...
 6.  Read, write, and run Python code for common data tasks, and combine R and Python in one Quarto report.
 7.  Use AI coding tools to speed up work while checking their output and protecting private health information.
 
-## Instructor {.sec-green}
+## Instructor {.sec2}
 
 **Dr. Nicky Wakim**\
 Vanport 622A\
@@ -164,7 +118,7 @@ Vanport 622A\
 
 Office hours will be posted on the [course home page](index.qmd).
 
-## Materials {.sec-coral}
+## Materials {.sec3}
 
 ### Textbooks
 
@@ -209,14 +163,14 @@ If your only computer is a Chromebook or tablet, you can't run Docker locally. Y
 
 All course data is public and needs no account or data use agreement: [NHANES](https://www.cdc.gov/nchs/nhanes/), [Synthea](https://synthetichealth.github.io/synthea/) synthetic EHR data, the [MIMIC-IV demo](https://physionet.org/content/mimic-iv-demo/), and open-access [PhysioNet](https://physionet.org/) datasets.
 
-## Grading & Requirements {.sec-pink}
+## Grading & Requirements {.sec4}
 
-::::: purple
-::: purple-ttl
+::::: warm
+::: warm-ttl
 Draft
 :::
 
-::: purple-cont
+::: warm-cont
 The grading below is a proposal; the weights are not yet final.
 :::
 :::::
@@ -243,7 +197,7 @@ In teams, you'll build a small analysis of public health data that someone else 
 
 In week 10, each team reruns another team's project from GitHub and reports what worked and what didn't.
 
-## Week 1 Setup Assignment {#week-1-setup-assignment .sec-blue}
+## Week 1 Setup Assignment {#week-1-setup-assignment .sec1}
 
 This is the first assignment of the course. It also shows how assignments are set up and submitted.
 
@@ -267,12 +221,12 @@ This is the first assignment of the course. It also shows how assignments are se
 8.  Run `usethis::git_sitrep()` and check that it reports no problems.
 9.  Launch a GitHub Codespace, open its terminal, and run `ls`.
 
-::::: green
-::: green-ttl
+::::: accent
+::: accent-ttl
 Submit
 :::
 
-::: green-cont
+::: accent-cont
 - Your GitHub username
 - A screenshot of your GitHub Education approval (or pending status)
 - The output of `usethis::git_sitrep()`
@@ -281,7 +235,7 @@ Submit
 :::
 :::::
 
-## Course Policies {.sec-green}
+## Course Policies {.sec2}
 
 ### Use of AI Tools {#use-of-ai-tools}
 
@@ -291,12 +245,12 @@ AI coding tools are allowed, and we'll learn to use them well in week 9. When yo
 - **Say what you used.** Note in each assignment which tools you used and for what.
 - **Protect private health information.**
 
-::::: red
-::: red-ttl
+::::: stop
+::: stop-ttl
 Never allowed
 :::
 
-::: red-cont
+::: stop-cont
 - **Entering protected health information into a public AI tool**
 :::
 :::::
@@ -309,11 +263,11 @@ To be announced.
 
 As a PSU/OHSU student, you're expected to act with professionalism and integrity. Academic misconduct (plagiarism, cheating, fabricating data, falsifying records, or helping others do so) will be taken seriously. Your submitted work should reflect your own effort, and any resources you use should be cited.
 
-## Schedule {.sec-coral}
+## Schedule {.sec3}
 
 See the [Schedule page](schedule.qmd). I may adjust it if we need more or less time on a topic.
 
-## Student Resources {.sec-pink}
+## Student Resources {.sec4}
 
 ### Student Wellness {#student-wellness}
 
@@ -337,6 +291,6 @@ PSU's [Resource Center for Students with Children](https://www.pdx.edu/students-
 - **SPH Writing Support:** one-on-one help from Leslie Bienen, MFA, DVM, on papers, dissertations, applications, grants, and more. Email [writingsupportsph\@pdx.edu](mailto:writingsupportsph@pdx.edu) or book on [Calendly](https://calendly.com/writingsupportsph/writing-meeting).
 - **Grammarly:** SPH students get a free subscription. Sign up with your PSU login through this [form](https://docs.google.com/forms/d/1IQWFsARrTJlasK2a5JTonR4ygr8MxqIzbh_bAxKmWWI/edit?ts=614ce07a).
 
-## SPH and OHSU Policies {.sec-blue}
+## SPH and OHSU Policies {.sec1}
 
 See the Brightspace syllabus for additional SPH and OHSU policies and resources.
