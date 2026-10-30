@@ -184,23 +184,24 @@ ul.task-list li input[type="checkbox"] {
 /* ---- BSTA 504 color palette ---- */
 :root {
   --key: #7A5590;     --key-text: #7A5590;                              /* amethyst */
-  --sec1: #7A5590; --sec1-light: #9C7BAC; --sec1-text: #7A5590;          /* amethyst */
-  --sec2: #E2671E; --sec2-light: #FF7F2D; --sec2-text: #C2570F;          /* pumpkin (darker for text) */
-  --sec3: #2E8FDB; --sec3-light: #4CB1FF; --sec3-text: #1A73B8;          /* cool sky (darker for text) */
-  --sec4: #5A9A56; --sec4-light: #7CB078; --sec4-text: #3F7A3B;          /* sage (darker for text) */
+  --sec1: #7A5590; --sec1-light: #9C7BAC; --sec1-text: #7A5590; --sec1-tint: #F5F6FC;  /* amethyst / ghost white */
+  --sec2: #E2671E; --sec2-light: #FF7F2D; --sec2-text: #C2570F; --sec2-tint: #FEF6F4;  /* pumpkin / snow */
+  --sec3: #2E8FDB; --sec3-light: #4CB1FF; --sec3-text: #1A73B8; --sec3-tint: #F2F8FC;  /* cool sky / alice blue */
+  --sec4: #5A9A56; --sec4-light: #7CB078; --sec4-text: #3F7A3B; --sec4-tint: #F5FAF5;  /* sage / mint cream */
   --tint: #F5F6FC;  --yes: #3F7A3B;  --no: #C2570F;  --warm: #E2671E;
-  --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text);
+  --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint);
 }
 .title{ font-size: 40px; color: var(--key-text); background-color: #fff; padding: 0px; }
 
 /* Section colors: add {.sec1} ... {.sec4} after a ## header */
-.sec1 { --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); }
-.sec2 { --sec: var(--sec2); --sec-light: var(--sec2-light); --sec-text: var(--sec2-text); }
-.sec3 { --sec: var(--sec3); --sec-light: var(--sec3-light); --sec-text: var(--sec3-text); }
-.sec4 { --sec: var(--sec4); --sec-light: var(--sec4-light); --sec-text: var(--sec4-text); }
+.sec1 { --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint); }
+.sec2 { --sec: var(--sec2); --sec-light: var(--sec2-light); --sec-text: var(--sec2-text); --sec-tint: var(--sec2-tint); }
+.sec3 { --sec: var(--sec3); --sec-light: var(--sec3-light); --sec-text: var(--sec3-text); --sec-tint: var(--sec3-tint); }
+.sec4 { --sec: var(--sec4); --sec-light: var(--sec4-light); --sec-text: var(--sec4-text); --sec-tint: var(--sec4-tint); }
 
-section.level2 > h2 { background-color: var(--sec); color: white; padding: 0.45em 0.8em;
-  border-radius: 10px; border-bottom: none; margin-top: 2.5rem; }
+/* Main headers: light tinted block with colored text */
+section.level2 > h2 { background-color: var(--sec-tint); color: var(--sec-text); padding: 0.45em 0.8em;
+  border-radius: 10px; border-bottom: none; margin-top: 2.5rem; font-weight: 700; }
 section.level3 > h3 { color: var(--sec-text); margin-top: 1.75rem; }
 section.level4 > h4 { color: var(--sec-text); margin-top: 1.25rem; }
 main p strong, main li strong { color: var(--sec-text); }
