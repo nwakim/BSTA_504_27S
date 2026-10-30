@@ -18,35 +18,37 @@ $gray-800: #3e3f3a !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$PSU-green:     #004832 !default;
-$OHSU-dblue:    #193D78 !default;
-$OHSU-yellow:   #F7CB25 !default;
-$OHSU-blue:     #49A3D1 !default;
-$OHSU-green:    #4EA627 !default;
+// BSTA 504 palette
+$amethyst-smoke: #9C7BAC !default;
+$pumpkin-spice:  #FF7F2D !default;
+$sage-green:     #7CB078 !default;
+$pale-sky:       #D0E6FF !default;
+$charcoal:       #4A4B4B !default;
+$cool-sky:       #4CB1FF !default;
+$mint-cream:     #F5FAF5 !default;
+$alice-blue:     #F2F8FC !default;
+$snow:           #FEF6F4 !default;
+$ghost-white:    #F5F6FC !default;
 
-$blue:        #5BAFF8 !default;
-$dark-blue:   #3070BF !default;
-$pink:        #EF85B3 !default;
-$pink2:       #BF396F !default;
-$orange:      #E75B5C !default;
-$orange2:     #C44546 !default;   // darker coral, readable as text on white
-$red:         #C83532 !default;
-$purple:      #6A4C9C !default;   // softer violet (was #8043F3)
-$purple2:     #9F87C9 !default;   // was #9F71F7
-$slate-grey:  #6C757D !default;
-$green:       #367B79 !default;
-$green2:      #459B99 !default;
-$ivory:       #FDF3F2 !default;
+// Deeper shades of the palette, readable as text on white
+$sky-text:       #1A73B8 !default;
+$pumpkin-text:   #C2570F !default;
+$sage-text:      #3F7A3B !default;
+$amethyst-text:  #7A5590 !default;
 
-// $primary:       $blue !default;
-$primary:       $dark-blue !default;
+$blue:        $cool-sky !default;
+$orange:      $pumpkin-spice !default;
+$green:       $sage-green !default;
+$purple:      $amethyst-smoke !default;
+
+$primary:       $sky-text !default;
 $secondary:     $gray-600 !default;
-$success:       $red !default;
-$info:          $pink !default;
-$warning:       $pink2 !default;
-$danger:        $orange !default;
+$success:       $sage-text !default;
+$info:          $cool-sky !default;
+$warning:       $pumpkin-spice !default;
+$danger:        $pumpkin-text !default;
 $light:         $gray-200 !default;
-$dark:          $gray-800 !default;
+$dark:          $charcoal !default;
 
 $min-contrast-ratio:   2 !default;
 
@@ -56,7 +58,7 @@ $body-color:                $gray-800 !default;
 
 // Links
 
-$link-color:                $success !default;
+$link-color:                $sky-text !default;
 
 // Fonts
 
