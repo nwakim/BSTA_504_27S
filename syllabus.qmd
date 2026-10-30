@@ -12,7 +12,7 @@ editor_options:
 
 ```{css, echo=FALSE}
 /* ---- BSTA 504 color palette ---- */
-/* One accent color (amethyst) for structure; pumpkin only for warnings */
+/* Amethyst for tables and the key box; pumpkin only for warnings */
 :root {
   --accent: #7A5590;       /* deep amethyst: headers, sub-headers, key box */
   --accent-light: #9C7BAC; /* amethyst: borders */
@@ -20,13 +20,23 @@ editor_options:
   --neutral: #D9D4DE;      /* soft gray-lavender: borders of neutral boxes */
   --warn: #C2570F;         /* pumpkin, darker for text: "Never allowed" only */
   --body: #3E3F3A;
+  /* Section header colors: add {.sec1} ... {.sec4} after a ## header */
+  --sec1-text: #7A5590; --sec1-tint: #F4F0F7;   /* amethyst / light lavender */
+  --sec2-text: #C2570F; --sec2-tint: #FEF6F4;   /* pumpkin / snow */
+  --sec3-text: #1A73B8; --sec3-tint: #F2F8FC;   /* cool sky / alice blue */
+  --sec4-text: #3F7A3B; --sec4-tint: #F5FAF5;   /* sage / mint cream */
+  --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint);
 }
+.sec1 { --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint); }
+.sec2 { --sec-text: var(--sec2-text); --sec-tint: var(--sec2-tint); }
+.sec3 { --sec-text: var(--sec3-text); --sec-tint: var(--sec3-tint); }
+.sec4 { --sec-text: var(--sec4-text); --sec-tint: var(--sec4-tint); }
 .title{ font-size: 40px; color: var(--accent); background-color: #fff; padding: 0px; }
 
-/* Main headers: light tinted block with amethyst text */
-section.level2 > h2 { background-color: var(--tint); color: var(--accent); padding: 0.45em 0.8em;
+/* Headers take their section's color; tables, links, and bold text stay the same everywhere */
+section.level2 > h2 { background-color: var(--sec-tint); color: var(--sec-text); padding: 0.45em 0.8em;
   border-radius: 10px; border-bottom: none; margin-top: 2.5rem; font-weight: 700; }
-section.level3 > h3 { color: var(--accent); margin-top: 1.75rem; }
+section.level3 > h3 { color: var(--sec-text); margin-top: 1.75rem; }
 section.level4 > h4 { color: var(--body); margin-top: 1.25rem; }
 .lead { font-size: 1.15em; }
 
