@@ -11,7 +11,7 @@ format:
 ```{css, echo=FALSE}
 .title{
   font-size: 30px;
-  color: #4A4B4B;
+  color: #7A5590;
   background-color: #fff;
   padding: 0px;
 }

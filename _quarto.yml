@@ -5,7 +5,7 @@ project:
 website:
   title: "Introduction to Health Data Science"
   navbar:
-    background: "#4A4B4B"
+    background: "#9C7BAC"
     search: true
     foreground: "#fff"
     collapse-below: sm

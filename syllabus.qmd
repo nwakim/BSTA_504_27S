@@ -28,7 +28,7 @@ editor_options:
 
 .title{
   font-size: 30px;
-  color: var(--charcoal);
+  color: var(--amethyst-text);
   background-color: #fff;
   padding: 0px;
 }
@@ -65,7 +65,7 @@ main p strong, main li strong { color: var(--sec-text); }
 
 /* Tables */
 main table thead th {
-  background-color: var(--charcoal) !important;
+  background-color: var(--amethyst) !important;
   color: white !important;
   border-bottom: none;
 }
