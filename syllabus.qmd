@@ -12,54 +12,45 @@ editor_options:
 
 ```{css, echo=FALSE}
 /* ---- BSTA 504 color palette ---- */
+/* One accent color (amethyst) for structure; pumpkin only for warnings */
 :root {
-  --key: #7A5590;     --key-text: #7A5590;                              /* amethyst */
-  --sec1: #7A5590; --sec1-light: #9C7BAC; --sec1-text: #7A5590; --sec1-tint: #F5F6FC;  /* amethyst / ghost white */
-  --sec2: #E2671E; --sec2-light: #FF7F2D; --sec2-text: #C2570F; --sec2-tint: #FEF6F4;  /* pumpkin / snow */
-  --sec3: #2E8FDB; --sec3-light: #4CB1FF; --sec3-text: #1A73B8; --sec3-tint: #F2F8FC;  /* cool sky / alice blue */
-  --sec4: #5A9A56; --sec4-light: #7CB078; --sec4-text: #3F7A3B; --sec4-tint: #F5FAF5;  /* sage / mint cream */
-  --tint: #F5F6FC;  --yes: #3F7A3B;  --no: #C2570F;  --warm: #E2671E;
-  --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint);
+  --accent: #7A5590;       /* deep amethyst: headers, sub-headers, key box */
+  --accent-light: #9C7BAC; /* amethyst: borders */
+  --tint: #F4F0F7;         /* light lavender: header and table backgrounds */
+  --neutral: #D9D4DE;      /* soft gray-lavender: borders of neutral boxes */
+  --warn: #C2570F;         /* pumpkin, darker for text: "Never allowed" only */
+  --body: #3E3F3A;
 }
-.title{ font-size: 40px; color: var(--key-text); background-color: #fff; padding: 0px; }
+.title{ font-size: 40px; color: var(--accent); background-color: #fff; padding: 0px; }
 
-/* Section colors: add {.sec1} ... {.sec4} after a ## header */
-.sec1 { --sec: var(--sec1); --sec-light: var(--sec1-light); --sec-text: var(--sec1-text); --sec-tint: var(--sec1-tint); }
-.sec2 { --sec: var(--sec2); --sec-light: var(--sec2-light); --sec-text: var(--sec2-text); --sec-tint: var(--sec2-tint); }
-.sec3 { --sec: var(--sec3); --sec-light: var(--sec3-light); --sec-text: var(--sec3-text); --sec-tint: var(--sec3-tint); }
-.sec4 { --sec: var(--sec4); --sec-light: var(--sec4-light); --sec-text: var(--sec4-text); --sec-tint: var(--sec4-tint); }
-
-/* Main headers: light tinted block with colored text */
-section.level2 > h2 { background-color: var(--sec-tint); color: var(--sec-text); padding: 0.45em 0.8em;
+/* Main headers: light tinted block with amethyst text */
+section.level2 > h2 { background-color: var(--tint); color: var(--accent); padding: 0.45em 0.8em;
   border-radius: 10px; border-bottom: none; margin-top: 2.5rem; font-weight: 700; }
-section.level3 > h3 { color: var(--sec-text); margin-top: 1.75rem; }
-section.level4 > h4 { color: var(--sec-text); margin-top: 1.25rem; }
-main p strong, main li strong { color: var(--sec-text); }
+section.level3 > h3 { color: var(--accent); margin-top: 1.75rem; }
+section.level4 > h4 { color: var(--body); margin-top: 1.25rem; }
 .lead { font-size: 1.15em; }
 
-main table thead th { background-color: var(--sec) !important; color: white !important; border-bottom: none; }
+main table thead th { background-color: var(--accent) !important; color: white !important; border-bottom: none; }
 main table tbody tr:nth-child(even) { background-color: var(--tint); }
 
 .yes, .no { display: inline-block; min-width: 3em; padding: 0.1em 0.6em; border-radius: 999px;
   color: white; font-weight: 600; font-size: 0.9em; }
-.yes { background-color: var(--yes); }
-.no  { background-color: var(--no); }
+.yes { background-color: var(--accent); }
+.no  { background-color: var(--warn); }
 
-main blockquote { background-color: var(--tint); border-left: 6px solid var(--sec-light);
+main blockquote { background-color: var(--tint); border-left: 6px solid var(--accent-light);
   padding: 0.75em 1em; border-radius: 0 10px 10px 0; color: black; }
 
-/* Boxes: ::::: blue (key info) / warm / accent / stop */
-.blue   { --box: var(--key);  --box-text: var(--key-text); }
-.warm   { --box: var(--warm); --box-text: var(--sec2-text); }
-.accent { --box: var(--sec3); --box-text: var(--sec3-text); }
-.stop   { --box: var(--no);   --box-text: var(--no); }
-.blue, .warm, .accent, .stop { margin: 1em 0; border: 3px solid var(--box); border-radius: 10px; }
-.blue-ttl, .warm-ttl, .accent-ttl, .stop-ttl { padding: 5px 15px 0.1em 15px; color: white;
-  background-color: var(--box); font-weight: 600; font-size: 1em; }
+/* Boxes: ::::: blue (key info) / warm and accent (neutral notes) / stop (warnings) */
+.blue   { --box: var(--accent);  --box-bg: var(--accent); --box-fg: white; }
+.warm, .accent { --box: var(--neutral); --box-bg: var(--tint); --box-fg: var(--accent); }
+.stop   { --box: var(--warn);    --box-bg: var(--warn);   --box-fg: white; }
+.blue, .warm, .accent, .stop { margin: 1em 0; border: 2px solid var(--box); border-radius: 10px; overflow: hidden; }
+.blue-ttl, .warm-ttl, .accent-ttl, .stop-ttl { padding: 5px 15px 0.1em 15px; color: var(--box-fg);
+  background-color: var(--box-bg); font-weight: 600; font-size: 1em; }
 .blue-ttl p, .warm-ttl p, .accent-ttl p, .stop-ttl p { margin: 0 0 4px 0; }
 .blue-cont, .warm-cont, .accent-cont, .stop-cont { padding: 8px 15px 2px 15px; color: black;
-  background-color: white; border-radius: 10px; }
-.blue-cont strong, .warm-cont strong, .accent-cont strong, .stop-cont strong { color: var(--box-text); }
+  background-color: white; }
 ```
 
 ```{r setup, include=FALSE}
