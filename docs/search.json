@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "The course runs 10 weeks with two lessons a week. SQL and Python each get two full weeks. I may adjust the schedule if we need more or less time on a topic.\n\n\n\n\nWeek\nDate\nLes-son\nTheme\nTopic\nFocus\nData\nReading\n\n\n\n\n1\n03/29\n1\nIntro to health data science\nHealth data science workflows\nWelcome and syllabus. The data science life cycle and what a reproducible workflow looks like. Set up R projects and Quarto.\nCourse examples from NHANES\nVDS\n\n\n\n03/31\n2\nIntro to health data science\nThe health data landscape\nWhere each kind of data comes from, its usual formats, and who on a research team works with it.\nShort samples of EHR, claims, genomics, imaging, and wearable data\nVDS\n\n\n\n04/04\n\n\nWeek 1 setup assignment due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\n04/05\n1\nWhere computing happens\nThe Unix command line\nNavigating files, pipes, and grep/head/wc to inspect data too big to open in Excel.\nLarge CSV and text files (e.g., NHANES exports)\nShell\n\n\n\n04/07\n2\nWhere computing happens\nScripts and remote computing\nWriting shell scripts, using ssh to reach a server, HPC, or the cloud, and moving files there.\nThe same files on a remote server\nDSatCL\n\n\n\n04/11\n\n\nLab 1 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\n04/12\n1\nCollaborating on code\nGit basics\nCommits, history, .gitignore (keeping data and PHI out of repos), and pushing to GitHub.\nStudents’ own project repos\nHappy Git\n\n\n\n04/14\n2\nCollaborating on code\nCollaborating on GitHub\nBranches, pull requests, code review, and resolving a merge conflict.\nA shared team repo\nHappy Git\n\n\n\n04/18\n\n\nLab 2 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\n04/19\n1\nReproducibility\nR environments with renv\nLocking package versions so a project reruns the same way months later.\nAn existing course analysis\nrenv\n\n\n\n04/21\n2\nReproducibility\nDocker containers\nImages, containers, and running someone else’s project with one command.\nThe same analysis, containerized\n\n\n\n\n04/25\n\n\nLab 3 due\n\n\n\n\n\n\n04/25\n\n\nProject checkpoint 1 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\n04/26\n1\nRelational data\nRelational data\nTables, primary and foreign keys, and how a database differs from a data frame.\nSynthetic EHR tables (Synthea): patients, encounters, conditions\nIntro SQL\n\n\n\n04/28\n2\nRelational data\nSQL queries\nSELECT, WHERE, joins, and GROUP BY.\nThe same Synthea tables in DuckDB\nIntro SQL\n\n\n\n05/02\n\n\nLab 4 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\n05/03\n1\nQuerying real health data\nAdvanced SQL\nSubqueries, window functions, and building an analysis cohort with SQL.\nMIMIC-IV demo data\nIntro SQL\n\n\n\n05/05\n2\nQuerying real health data\nSQL from R and larger-than-memory data\nDBI/dbplyr, and querying data that doesn’t fit in memory with DuckDB and Arrow.\nMIMIC-IV demo saved as Parquet\n\n\n\n\n05/09\n\n\nLab 5 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\n05/10\n1\nPython as a second language\nPython fundamentals for R users\nSyntax, data types, lists and dictionaries, and functions, mapped onto R.\nSmall NHANES extracts\nPDA\n\n\n\n05/12\n2\nPython as a second language\nData frames in Python\npandas/polars: filtering, grouping, and joins, side by side with dplyr.\nNHANES\nPDA, R4DS\n\n\n\n05/16\n\n\nLab 6 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\n05/17\n1\nPython in practice\nA Python analysis pipeline\nWrangling, plotting, and summarizing in Python from start to finish.\nWearable time-series data (an open-access PhysioNet dataset)\nPDA\n\n\n\n05/19\n2\nPython in practice\nPython in a reproducible workflow\nPython virtual environments, and mixing R and Python in one Quarto document.\nThe same wearable data\nQuarto\n\n\n\n05/23\n\n\nLab 7 due\n\n\n\n\n\n\n05/23\n\n\nProject checkpoint 2 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\n05/24\n1\nWorking with AI\nAI coding assistants\nPrompting, checking generated code, and catching wrong answers.\nStudents’ own SQL and Python code from earlier weeks\n\n\n\n\n05/26\n2\nWorking with AI\nAI agents and responsible use\nAgentic tools, data privacy (no PHI in public tools), and documenting AI use for reproducibility.\nThe team project repo\n\n\n\n\n05/30\n\n\nLab 8 due\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\n05/31\n1\nPutting it together\nProject work and peer review\nTeams rerun another team’s project from GitHub and give feedback.\nEach team’s chosen data\n\n\n\n\n06/02\n2\nPutting it together\nProject presentations\nPresent a project that is reproducible end to end and uses SQL and/or Python.\nEach team’s chosen data\n\n\n\n\n06/06\n\n\nFinal project due\n\n\n\n\n\n\n\nReading key: VDS = Veridical Data Science; Shell = The Unix Shell (Software Carpentry); DSatCL = Data Science at the Command Line; Happy Git = Happy Git and GitHub for the useR; renv = renv documentation; Intro SQL = Intro to SQL (Fred Hutch); PDA = Python for Data Analysis; R4DS = R for Data Science; Quarto = Quarto guide.\nWeeks 5 and 6 use EHR data only as practice material for SQL, not to teach EHR methods."
+  },
+  {
+    "objectID": "syllabus.html#description",
+    "href": "syllabus.html#description",
+    "title": "BSTA 504 Syllabus",
+    "section": "Description",
+    "text": "Description\nWelcome to BSTA 504! This course introduces the ideas, practices, and applications of health data science in the context of public health and biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: the command line, version control, reproducible environments, relational databases and SQL, and Python. You’ll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.\nPrerequisites: BSTA 513 (Categorical Data Analysis) or BSTA 526 (R Programming for Health Data Science)\nFormat: 10 weeks, two lessons per week (3 hours of class time per week). Each lesson pairs a short demonstration with hands-on work on a health dataset.\n\nCourse Learning Objectives\nBy the end of this course, you should be able to…\n\nDescribe the data science life cycle and the main types of health data, and where each fits in a research workflow.\nUse the Unix command line to inspect large files, run scripts, and work on a remote computer.\nManage and share code with Git and GitHub, including branches, pull requests, and code review.\nBuild a project that someone else can rerun, using renv and Docker.\nQuery relational health data with SQL, from both a database and R.\nRead, write, and run Python code for common data tasks, and combine R and Python in one Quarto report.\nUse AI coding tools to speed up work while checking their output and protecting private health information."
+  },
+  {
+    "objectID": "syllabus.html#instructor",
+    "href": "syllabus.html#instructor",
+    "title": "BSTA 504 Syllabus",
+    "section": "Instructor",
+    "text": "Instructor\nDr. Nicky Wakim\nVanport 622A\nwakim@ohsu.edu\nOffice hours will be posted on the course home page."
+  },
+  {
+    "objectID": "syllabus.html#materials",
+    "href": "syllabus.html#materials",
+    "title": "BSTA 504 Syllabus",
+    "section": "Materials",
+    "text": "Materials\n\nTextbooks\nAll are free online.\n\nVeridical Data Science by Bin Yu and Rebecca Barter\nIntroduction to SQL (Fred Hutch)\nPython for Data Analysis, 3rd edition by Wes McKinney\n\n\n\n\nAdditional free resources\nThese are matched to the weeks they support.\n\nThe Unix Shell (Software Carpentry), for week 2\nData Science at the Command Line by Jeroen Janssens, for week 2\nHappy Git and GitHub for the useR by Jenny Bryan, for weeks 1 and 3\nrenv documentation, for week 4\nR for Data Science, 2nd edition, for comparing R with Python in weeks 7 and 8\nQuarto guide, throughout\n\n\n\nSoftware and accounts\nEverything in this course is free; you don’t need to buy any software, data, or subscriptions.\n\n\n\n\n\n\n\n\nTool\nUsed for\nCost\n\n\n\n\nR, and Positron or RStudio\nAll weeks\nFree\n\n\nQuarto\nReports, all weeks\nFree\n\n\nGit, and Git Bash on Windows\nCommand line and version control (weeks 2–3)\nFree\n\n\nGitHub account and GitHub Education\nRepositories, Codespaces, Copilot\nFree for verified students\n\n\nDocker Desktop\nContainers (week 4)\nFree for education use\n\n\nDuckDB and SQLite\nSQL (weeks 5–6)\nFree\n\n\nPython, installed with uv or Miniforge\nWeeks 7–8\nFree\n\n\nGitHub Copilot\nAI coding (week 9)\nFree with GitHub Education\n\n\n\nIf your only computer is a Chromebook or tablet, you can’t run Docker locally. You’ll use GitHub Codespaces, a free cloud Linux machine, for weeks 2 and 4.\n\n\nData\nAll course data is public and needs no account or data use agreement: NHANES, Synthea synthetic EHR data, the MIMIC-IV demo, and open-access PhysioNet datasets."
+  },
+  {
+    "objectID": "syllabus.html#grading-requirements",
+    "href": "syllabus.html#grading-requirements",
+    "title": "BSTA 504 Syllabus",
+    "section": "Grading & Requirements",
+    "text": "Grading & Requirements\n\n\nDraft\n\n\nThe grading below is a proposal; the weights are not yet final.\n\n\n\n\n\n\n\n\n\n\n\nCourse activity\nDue\nWeight\nDetails\n\n\n\n\nWeek 1 setup assignment\n04/04\n5%\nAccounts, software, and a working Git connection\n\n\nWeekly lab assignments\nWeekly, weeks 2–9\n45%\nOne per week, each submitted through GitHub\n\n\nProject checkpoints\n04/25 and 05/23\n15%\nRepo setup and data access (week 4); SQL and Python work in progress (week 8)\n\n\nFinal project\n06/06\n25%\nReproducible repo, peer rerun (week 10, lesson 1), and presentation (week 10, lesson 2)\n\n\nParticipation\nOngoing\n10%\nIn-class work and peer code review\n\n\n\nLetter grades: A (≥93%), A- (90-92%), B+ (88-89%), B (83-87%), B- (80-82%), C+ (78-79%), C (73-77%), C- (70-72%), D (60-69%), F (&lt;60%).\n\nFinal Project\nIn teams, you’ll build a small analysis of public health data that someone else can rerun from scratch. The project must:\n\nLive in a GitHub repository with a README, a clear folder structure, and a history of commits from every team member\nLock its R packages with renv and run inside a Docker container\nGet its data with SQL, Python, or both\nReport results in a Quarto document\nDocument any AI tools used and how their output was checked\n\nIn week 10, each team reruns another team’s project from GitHub and reports what worked and what didn’t."
+  },
+  {
+    "objectID": "syllabus.html#week-1-setup-assignment",
+    "href": "syllabus.html#week-1-setup-assignment",
+    "title": "BSTA 504 Syllabus",
+    "section": "Week 1 Setup Assignment",
+    "text": "Week 1 Setup Assignment\nThis is the first assignment of the course. It also shows how assignments are set up and submitted.\nDue April 04 (end of week 1). Apply for GitHub Education at or before the first lesson, because approval can take several days.\n\nAccounts\n\nCreate a GitHub account (or use an existing one) with a professional username, and add your school email.\nApply for GitHub Education with your school email and proof of enrollment.\nOnce approved, activate Copilot Student from your GitHub Education benefits page.\n\n\n\nSoftware\n\nInstall R, Positron or RStudio, Quarto, and Git.\nInstall Python with uv or Miniforge.\nConfirm your laptop can run Docker Desktop (Windows 10/11 or a recent macOS). Don’t install it until week 4.\n\n\n\nConnect and test\n\nConnect Git to GitHub from R with usethis::use_git_config(), usethis::create_github_token(), and gitcreds::gitcreds_set().\nRun usethis::git_sitrep() and check that it reports no problems.\nLaunch a GitHub Codespace, open its terminal, and run ls.\n\n\n\nSubmit\n\n\n\nYour GitHub username\nA screenshot of your GitHub Education approval (or pending status)\nThe output of usethis::git_sitrep()\nYour operating system\nAny step that didn’t work"
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "BSTA 504 Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nUse of AI Tools\nAI coding tools are allowed, and we’ll learn to use them well in week 9. When you use them:\n\nYou’re responsible for every line. Check all AI-generated code and its output before you submit it.\nSay what you used. Note in each assignment which tools you used and for what.\nProtect private health information.\n\n\n\nNever allowed\n\n\n\nEntering protected health information into a public AI tool\n\n\n\n\n\nLate Work Policy\nTo be announced.\n\n\nAcademic Integrity\nAs a PSU/OHSU student, you’re expected to act with professionalism and integrity. Academic misconduct (plagiarism, cheating, fabricating data, falsifying records, or helping others do so) will be taken seriously. Your submitted work should reflect your own effort, and any resources you use should be cited."
+  },
+  {
+    "objectID": "syllabus.html#schedule",
+    "href": "syllabus.html#schedule",
+    "title": "BSTA 504 Syllabus",
+    "section": "Schedule",
+    "text": "Schedule\nSee the Schedule page. I may adjust it if we need more or less time on a topic."
+  },
+  {
+    "objectID": "syllabus.html#student-resources",
+    "href": "syllabus.html#student-resources",
+    "title": "BSTA 504 Syllabus",
+    "section": "Student Resources",
+    "text": "Student Resources\n\nStudent Wellness\nI care about your physical and emotional well-being. If a health issue is affecting your work, or you’d like help connecting with resources, please reach out.\n\nOHSU: Behavioral Health (all visits are free) and Student Health and Wellness, 503-494-8665\nPSU: Student Health and Counseling (SHAC), 503-725-2800. OHSU students can also use PSU’s Counseling Services.\nSPH Health and Wellness Resources\n\n\n\nFood Insecurity\n\nPSU’s Free Food Market, second Monday of each month\nSNAP for college students: SNAP provides money for food. If you’re a single person making less than $2,609/month, you may be eligible. The state’s Oregon food benefits page has more on how to apply.\n\n\n\nStudents with Children\nPSU’s Resource Center for Students with Children offers family-friendly study spaces, baby starter packs, free kids’ clothing, and childcare financial resources.\n\n\nWriting Support\n\nSPH Writing Support: one-on-one help from Leslie Bienen, MFA, DVM, on papers, dissertations, applications, grants, and more. Email writingsupportsph@pdx.edu or book on Calendly.\nGrammarly: SPH students get a free subscription. Sign up with your PSU login through this form."
+  },
+  {
+    "objectID": "syllabus.html#sph-and-ohsu-policies",
+    "href": "syllabus.html#sph-and-ohsu-policies",
+    "title": "BSTA 504 Syllabus",
+    "section": "SPH and OHSU Policies",
+    "text": "SPH and OHSU Policies\nSee the Brightspace syllabus for additional SPH and OHSU policies and resources."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Health Data Science",
+    "section": "",
+    "text": "Spring 2027\n\nThis course introduces the ideas, practices, and applications of health data science in public health and the biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: the command line, version control, reproducible environments, relational databases and SQL, and Python. You’ll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.\n\nSyllabus Schedule GitHub Education"
+  },
+  {
+    "objectID": "index.html#bsta-504-introduction-to-health-data-science",
+    "href": "index.html#bsta-504-introduction-to-health-data-science",
+    "title": "Introduction to Health Data Science",
+    "section": "",
+    "text": "Spring 2027\n\nThis course introduces the ideas, practices, and applications of health data science in public health and the biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: the command line, version control, reproducible environments, relational databases and SQL, and Python. You’ll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.\n\nSyllabus Schedule GitHub Education"
+  }
+]

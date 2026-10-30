@@ -1,0 +1,140 @@
+---
+title: "Schedule"
+format:
+  html:
+    page-layout: full
+    link-external-newwindow: true
+    toc: true
+    highlight-style: ayu
+---
+
+```{css, echo=FALSE}
+.title{
+  font-size: 30px;
+  color: #3070BF;
+  background-color: #fff;
+  padding: 0px;
+}
+
+/* ---- Theme labels: small colored pills (text darkened so it's readable) ---- */
+.sched .info, .sched .cli, .sched .git, .sched .repro, .sched .reldata,
+.sched .sql, .sched .py, .sched .pyprac, .sched .ai, .sched .proj {
+  display: inline-block;
+  padding: 0.15em 0.65em;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92em;
+  line-height: 1.35;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.sched .info    { background-color: #EEF0F2; color: #5A6268; border-color: #D5D9DD; }
+.sched .cli     { background-color: #FCF0DC; color: #9A5A06; border-color: #F3D7A6; }
+.sched .git     { background-color: #FCE7F0; color: #AE2F66; border-color: #F5C2D9; }
+.sched .repro   { background-color: #E3F1FE; color: #1F6DB5; border-color: #B9DBFB; }
+.sched .reldata { background-color: #DDEEEE; color: #2E6B69; border-color: #B5D6D5; }
+.sched .sql     { background-color: #D3E8E7; color: #245856; border-color: #A6CDCB; }
+.sched .py      { background-color: #DCE6F5; color: #28599A; border-color: #B5C9E8; }
+.sched .pyprac  { background-color: #ECE6F5; color: #5A3F8A; border-color: #D2C6E6; }
+.sched .ai      { background-color: #FBE3E2; color: #A12B28; border-color: #F2BDBB; }
+.sched .proj    { background-color: #F8EAF0; color: #8C2A52; border-color: #EBC3D4; }
+
+/* ---- Header row ---- */
+.sched table thead th {
+  background-color: #3070BF;
+  color: white;
+  border-bottom: none;
+  vertical-align: middle;
+}
+.sched table thead th a { color: white; }
+
+/* ---- Scroll sideways on small screens instead of squishing ---- */
+.sched { overflow-x: auto; }
+.sched table { min-width: 900px; }
+
+/* ---- Due-date rows ---- */
+.sched table tbody tr:has(.setup-row) td,
+.sched table tbody tr:has(.check-row) td,
+.sched table tbody tr:has(.proj-row) td,
+.sched table tbody tr:has(.lab-row) td{
+  background-color: #F8EAF0 !important;
+  color: #B3346A;  /* slightly darker pink so it's readable */
+  font-weight: 600;
+}
+
+/* ---- Blank separator rows: any row whose cells are all empty turns blue ---- */
+.sched table tbody tr:not(:has(td:not(:empty))) td {
+  background-color: #3070BF !important;
+  box-shadow: none !important;   /* stops Bootstrap's striping from covering it */
+  padding: 0 !important;
+  height: 10px;
+  line-height: 0;
+  border: none;
+}
+
+.sched table th:nth-of-type(1) { width: 5% !important; }
+.sched table th:nth-of-type(2) { width: 6% !important; }
+.sched table th:nth-of-type(3) { width: 5% !important; }
+.sched table th:nth-of-type(4) { width: 13% !important; }
+.sched table th:nth-of-type(5) { width: 17% !important; }
+.sched table th:nth-of-type(6) { width: 30% !important; }
+.sched table th:nth-of-type(7) { width: 16% !important; }
+.sched table th:nth-of-type(8) { width: 8% !important; }
+```
+
+```{r setup, include=FALSE}
+library(here)
+source(here("class_dates.R"))
+```
+
+The course runs 10 weeks with two lessons a week. SQL and Python each get two full weeks. I may adjust the schedule if we need more or less time on a topic.
+
+::: sched
+| Week | Date | Les-son | Theme | Topic | Focus | Data | Reading |
+|:-------|:-------|:-------|--------|:-------|:-------|:-------|:------:|
+| 1 | `{r} w1d1 %>% format("%m/%d")` | 1 | [Intro to health data science]{.info} | Health data science workflows | Welcome and syllabus. The data science life cycle and what a reproducible workflow looks like. Set up R projects and Quarto. | Course examples from NHANES | [VDS](https://vdsbook.com/) |
+|  | `{r} w1d2 %>% format("%m/%d")` | 2 | [Intro to health data science]{.info} | The health data landscape | Where each kind of data comes from, its usual formats, and who on a research team works with it. | Short samples of EHR, claims, genomics, imaging, and wearable data | [VDS](https://vdsbook.com/) |
+|  | `{r} setup %>% format("%m/%d")` |  |  | [[Week 1 setup assignment due](syllabus.qmd#week-1-setup-assignment)]{.setup-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 2 | `{r} w2d1 %>% format("%m/%d")` | 1 | [Where computing happens]{.cli} | The Unix command line | Navigating files, pipes, and `grep`/`head`/`wc` to inspect data too big to open in Excel. | Large CSV and text files (e.g., NHANES exports) | [Shell](https://swcarpentry.github.io/shell-novice/) |
+|  | `{r} w2d2 %>% format("%m/%d")` | 2 | [Where computing happens]{.cli} | Scripts and remote computing | Writing shell scripts, using `ssh` to reach a server, HPC, or the cloud, and moving files there. | The same files on a remote server | [DSatCL](https://jeroenjanssens.com/dsatcl/) |
+|  | `{r} lab1 %>% format("%m/%d")` |  |  | [Lab 1 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 3 | `{r} w3d1 %>% format("%m/%d")` | 1 | [Collaborating on code]{.git} | Git basics | Commits, history, `.gitignore` (keeping data and PHI out of repos), and pushing to GitHub. | Students' own project repos | [Happy Git](https://happygitwithr.com/) |
+|  | `{r} w3d2 %>% format("%m/%d")` | 2 | [Collaborating on code]{.git} | Collaborating on GitHub | Branches, pull requests, code review, and resolving a merge conflict. | A shared team repo | [Happy Git](https://happygitwithr.com/) |
+|  | `{r} lab2 %>% format("%m/%d")` |  |  | [Lab 2 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 4 | `{r} w4d1 %>% format("%m/%d")` | 1 | [Reproducibility]{.repro} | R environments with renv | Locking package versions so a project reruns the same way months later. | An existing course analysis | [renv](https://rstudio.github.io/renv/) |
+|  | `{r} w4d2 %>% format("%m/%d")` | 2 | [Reproducibility]{.repro} | Docker containers | Images, containers, and running someone else's project with one command. | The same analysis, containerized |  |
+|  | `{r} lab3 %>% format("%m/%d")` |  |  | [Lab 3 due]{.lab-row} |  |  |  |
+|  | `{r} check1 %>% format("%m/%d")` |  |  | [Project checkpoint 1 due]{.check-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 5 | `{r} w5d1 %>% format("%m/%d")` | 1 | [Relational data]{.reldata} | Relational data | Tables, primary and foreign keys, and how a database differs from a data frame. | Synthetic EHR tables (Synthea): patients, encounters, conditions | [Intro SQL](https://intro-sql-fh.netlify.app/) |
+|  | `{r} w5d2 %>% format("%m/%d")` | 2 | [Relational data]{.reldata} | SQL queries | SELECT, WHERE, joins, and GROUP BY. | The same Synthea tables in DuckDB | [Intro SQL](https://intro-sql-fh.netlify.app/) |
+|  | `{r} lab4 %>% format("%m/%d")` |  |  | [Lab 4 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 6 | `{r} w6d1 %>% format("%m/%d")` | 1 | [Querying real health data]{.sql} | Advanced SQL | Subqueries, window functions, and building an analysis cohort with SQL. | MIMIC-IV demo data | [Intro SQL](https://intro-sql-fh.netlify.app/) |
+|  | `{r} w6d2 %>% format("%m/%d")` | 2 | [Querying real health data]{.sql} | SQL from R and larger-than-memory data | DBI/dbplyr, and querying data that doesn't fit in memory with DuckDB and Arrow. | MIMIC-IV demo saved as Parquet |  |
+|  | `{r} lab5 %>% format("%m/%d")` |  |  | [Lab 5 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 7 | `{r} w7d1 %>% format("%m/%d")` | 1 | [Python as a second language]{.py} | Python fundamentals for R users | Syntax, data types, lists and dictionaries, and functions, mapped onto R. | Small NHANES extracts | [PDA](https://wesmckinney.com/book/) |
+|  | `{r} w7d2 %>% format("%m/%d")` | 2 | [Python as a second language]{.py} | Data frames in Python | pandas/polars: filtering, grouping, and joins, side by side with dplyr. | NHANES | [PDA](https://wesmckinney.com/book/), [R4DS](https://r4ds.hadley.nz/) |
+|  | `{r} lab6 %>% format("%m/%d")` |  |  | [Lab 6 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 8 | `{r} w8d1 %>% format("%m/%d")` | 1 | [Python in practice]{.pyprac} | A Python analysis pipeline | Wrangling, plotting, and summarizing in Python from start to finish. | Wearable time-series data (an open-access PhysioNet dataset) | [PDA](https://wesmckinney.com/book/) |
+|  | `{r} w8d2 %>% format("%m/%d")` | 2 | [Python in practice]{.pyprac} | Python in a reproducible workflow | Python virtual environments, and mixing R and Python in one Quarto document. | The same wearable data | [Quarto](https://quarto.org/docs/guide/) |
+|  | `{r} lab7 %>% format("%m/%d")` |  |  | [Lab 7 due]{.lab-row} |  |  |  |
+|  | `{r} check2 %>% format("%m/%d")` |  |  | [Project checkpoint 2 due]{.check-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 9 | `{r} w9d1 %>% format("%m/%d")` | 1 | [Working with AI]{.ai} | AI coding assistants | Prompting, checking generated code, and catching wrong answers. | Students' own SQL and Python code from earlier weeks |  |
+|  | `{r} w9d2 %>% format("%m/%d")` | 2 | [Working with AI]{.ai} | AI agents and responsible use | Agentic tools, data privacy (no PHI in public tools), and documenting AI use for reproducibility. | The team project repo |  |
+|  | `{r} lab8 %>% format("%m/%d")` |  |  | [Lab 8 due]{.lab-row} |  |  |  |
+|  |  |  |  |  |  |  |  |
+| 10 | `{r} w10d1 %>% format("%m/%d")` | 1 | [Putting it together]{.proj} | Project work and peer review | Teams rerun another team's project from GitHub and give feedback. | Each team's chosen data |  |
+|  | `{r} w10d2 %>% format("%m/%d")` | 2 | [Putting it together]{.proj} | Project presentations | Present a project that is reproducible end to end and uses SQL and/or Python. | Each team's chosen data |  |
+|  | `{r} proj %>% format("%m/%d")` |  |  | [Final project due]{.proj-row} |  |  |  |
+:::
+
+**Reading key:** [VDS](https://vdsbook.com/) = *Veridical Data Science*; [Shell](https://swcarpentry.github.io/shell-novice/) = *The Unix Shell* (Software Carpentry); [DSatCL](https://jeroenjanssens.com/dsatcl/) = *Data Science at the Command Line*; [Happy Git](https://happygitwithr.com/) = *Happy Git and GitHub for the useR*; [renv](https://rstudio.github.io/renv/) = renv documentation; [Intro SQL](https://intro-sql-fh.netlify.app/) = *Intro to SQL* (Fred Hutch); [PDA](https://wesmckinney.com/book/) = *Python for Data Analysis*; [R4DS](https://r4ds.hadley.nz/) = *R for Data Science*; [Quarto](https://quarto.org/docs/guide/) = Quarto guide.
+
+Weeks 5 and 6 use EHR data only as practice material for SQL, not to teach EHR methods.

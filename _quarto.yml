@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Introduction to Health Data Science"
+  navbar:
+    background: primary
+    search: true
+    foreground: "#fff"
+    collapse-below: sm
+    right:
+      - href: schedule.qmd
+        text: Schedule
+      - href: syllabus.qmd
+        text: Syllabus
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme:
+      - sandstone_NW.scss
+    toc: true

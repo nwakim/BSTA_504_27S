@@ -1,0 +1,147 @@
+---
+title: ""
+toc: false
+page-layout: full
+link-external-newwindow: true
+---
+
+```{=html}
+<style>
+/* ---- Lesson color palette ---- */
+:root {
+  --blue: #5BAFF8;   --dark-blue: #3070BF;
+  --pink: #EF85B3;   --pink2: #BF396F;
+  --orange: #E75B5C; --red: #C83532;
+  --green: #367B79;  --green2: #459B99;
+  --ivory: #FDF3F2;
+  --coral-text: #C44546;  /* darker coral so text stays readable */
+}
+
+/* ---- Welcome banner ---- */
+.hero {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #2A5FA3 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.hero h2 {
+  color: white;
+  border-bottom: none;
+  margin-top: 0;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+.hero img { border-radius: 12px; }
+.term-pill {
+  display: inline-block;
+  background-color: var(--blue);
+  color: white;
+  font-weight: 700;
+  padding: 0.2em 0.9em;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+.hero-text { font-size: 1.08rem; line-height: 1.6; }
+
+/* Buttons in the banner */
+.hero-btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--dark-blue) !important;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.45em 1.1em;
+  border-radius: 999px;
+  margin: 0.25rem 0.4rem 0.25rem 0;
+  border: 2px solid white;
+}
+.hero-btn:hover { background-color: transparent; color: white !important; }
+
+/* ---- Info cards ---- */
+.info-card {
+  background-color: white;
+  border: 1px solid #E9E4E2;
+  border-top: 6px solid var(--card);
+  border-radius: 12px;
+  padding: 1rem 1.25rem 0.5rem 1.25rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+.info-card h3 {
+  color: var(--card-text);
+  margin-top: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.info-card .icon { color: var(--card); }
+.info-card p { margin-bottom: 0.6rem; }
+.card-blue  { --card: var(--dark-blue); --card-text: var(--dark-blue); }
+.card-green { --card: var(--green);     --card-text: var(--green); }
+.card-coral { --card: var(--orange);    --card-text: var(--coral-text); }
+.card-pink  { --card: var(--pink2);     --card-text: var(--pink2); }
+
+.cards-band {
+  background-color: var(--ivory);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.source-link { text-align: right; color: #6C757D; }
+</style>
+```
+
+::: hero
+## BSTA 504: Introduction to Health Data Science
+
+[Spring 2027]{.term-pill}
+
+::: hero-text
+This course introduces the ideas, practices, and applications of health data science in public health and the biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: **the command line, version control, reproducible environments, relational databases and SQL, and Python.** You'll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.
+:::
+
+[Syllabus](syllabus.qmd){.hero-btn} [Schedule](schedule.qmd){.hero-btn} [GitHub Education](https://education.github.com/students){.hero-btn}
+:::
+
+::: grid
+::: {.g-col-12 .g-col-md-4}
+::: {.info-card .card-green}
+### Instructor
+
+[{{< iconify fluent person-24-filled size=24px >}}]{.icon} Dr. Nicky Wakim
+
+[{{< iconify bi building-fill size=24px >}}]{.icon} Vanport 622A
+
+[{{< iconify tabler mail-filled size=24px >}}]{.icon} [wakim\@ohsu.edu](mailto:wakim@ohsu.edu)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.info-card .card-coral}
+### Office Hours
+
+[{{< iconify icon-park-solid time size=24px >}}]{.icon} Times to be announced
+
+[{{< iconify mdi calendar-clock size=24px >}}]{.icon} Two lessons a week, 3 hours of class time
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.info-card .card-pink}
+### Contacting me
+
+[{{< iconify tabler message-circle-filled size=24px >}}]{.icon} E-mail is the best way to reach me. I try to respond to all course-related e-mails within 24 hours, Monday-Friday.
+:::
+:::
+:::
+
+::: {.cards-band .mt-4}
+### Before the first class
+
+[{{< iconify mdi github size=24px >}}]{.icon} Create a GitHub account and **apply for [GitHub Education](https://education.github.com/students) at or before the first lesson**, since approval can take several days. The full list of steps is in the [Week 1 setup assignment](syllabus.qmd#week-1-setup-assignment).
+:::
+
+::: source-link
+[{{< iconify icomoon-free github size=24px >}} View the source on GitHub](https://github.com/nwakim/BSTA_504_27S)
+:::

@@ -1,0 +1,360 @@
+---
+title: "BSTA 504 Syllabus"
+date-modified: "today"
+format:
+  html:
+    link-external-newwindow: true
+    page-layout: full
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{css, echo=FALSE}
+/* ---- Lesson color palette ---- */
+:root {
+  --blue: #5BAFF8;   --dark-blue: #3070BF;
+  --pink: #EF85B3;   --pink2: #BF396F;
+  --orange:  #C44546; --red: #C83532;
+  --purple: #8043F3; --purple2: #9F71F7;
+  --slate-grey: #6C757D;
+  --green: #367B79;  --green2: #459B99;
+  --ivory: #FDF3F2;
+  --sec: var(--dark-blue);       /* section color (set per section below) */
+  --sec-light: var(--blue);
+  --sec-text: var(--sec);        /* color for sub-headers and bold text */
+}
+ 
+.title{
+  font-size: 30px;
+  color: var(--dark-blue);
+  background-color: #fff;
+  padding: 0px;
+}
+ 
+/* ---- Section colors: add {.sec-___} after a ## header ---- */
+.sec-blue   { --sec: var(--dark-blue); --sec-light: var(--blue); }
+.sec-green  { --sec: var(--green);     --sec-light: var(--green2); }
+.sec-purple { --sec: var(--purple);    --sec-light: var(--purple2); }
+.sec-pink   { --sec: var(--pink2);     --sec-light: var(--pink); }
+.sec-red    { --sec: var(--red);       --sec-light: var(--orange); }
+.sec-coral  { --sec: var(--orange);    --sec-light: #F29B9B; --sec-text: #C44546; } /* darker coral for text so it's readable */
+.sec-blue, .sec-green, .sec-purple, .sec-pink, .sec-red { --sec-text: var(--sec); }
+ 
+/* Main headers: block of color */
+section.level2 > h2 {
+  background-color: var(--sec);
+  color: white;
+  padding: 0.45em 0.8em;
+  border-radius: 10px;
+  border-bottom: none;
+  margin-top: 2.5rem;
+}
+/* Sub-headers: colored text */
+section.level3 > h3 {
+  color: var(--sec-text);
+  margin-top: 1.75rem;
+}
+section.level4 > h4 {
+  color: var(--sec-text);
+  margin-top: 1.25rem;
+}
+ 
+/* Bold text picks up the section color */
+main p strong, main li strong { color: var(--sec-text); }
+ 
+/* Friendly opening paragraph */
+.lead { font-size: 1.15em; }
+ 
+/* Tables */
+main table thead th {
+  background-color: var(--sec);
+  color: white;
+  border-bottom: none;
+}
+main table tbody tr:nth-child(even) { background-color: var(--ivory); }
+ 
+/* Yes / No pills in the AI table: [Yes]{.yes} [No]{.no} */
+.yes, .no {
+  display: inline-block;
+  min-width: 3em;
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.yes { background-color: var(--green); }
+.no  { background-color: var(--red); }
+ 
+/* Block quotes (e.g., AI Use Statement example) */
+main blockquote {
+  background-color: var(--ivory);
+  border-left: 6px solid var(--sec-light);
+  padding: 0.75em 1em;
+  border-radius: 0 10px 10px 0;
+  color: black;
+}
+ 
+/* ---- Colored boxes: ::::: blue / ::: blue-ttl / ::: blue-cont ---- */
+.blue   { --box: var(--blue); }
+.pink   { --box: var(--pink2); }
+.green  { --box: var(--green); }
+.red    { --box: var(--red); }
+.purple { --box: var(--purple); }
+ 
+.blue, .pink, .green, .red, .purple {
+  margin: 1em 0;
+  border: 3px solid var(--box);
+  border-radius: 10px;
+}
+.blue-ttl, .pink-ttl, .green-ttl, .red-ttl, .purple-ttl {
+  padding: 5px 15px 0.1em 15px;
+  color: white;
+  background-color: var(--box);
+  font-weight: 600;
+  font-size: 1em;
+}
+.blue-cont, .pink-cont, .green-cont, .red-cont, .purple-cont {
+  padding: 8px 15px 2px 15px;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+.blue-ttl p, .pink-ttl p, .green-ttl p, .red-ttl p, .purple-ttl p { margin: 0 0 4px 0; }
+.blue-cont strong, .pink-cont strong, .green-cont strong,
+.red-cont strong, .purple-cont strong { color: var(--box); }
+.blue-cont strong { color: var(--dark-blue); }  /* light blue is too faint for text */
+```
+
+```{r setup, include=FALSE}
+library(here)
+source(here("class_dates.R"))
+```
+
+<!-- TODO before the syllabus is final:
+  - Add the program's AI policy, if it differs from the policy below
+  - Add the standard university statements (accessibility and accommodations, academic integrity, Title IX)
+  - Decide the late work policy
+  - Confirm the grading weights
+  - Confirm the course title still fits the workflow focus
+-->
+
+::::: blue
+::: blue-ttl
+Key Course Info
+:::
+
+::: blue-cont
+- **Before the first lesson:** apply for [GitHub Education](https://education.github.com/students). Approval can take several days.
+- **Everything is free.** You don't need to buy any software, data, or subscriptions.
+- **Used AI on an assignment?** Note which tools you used and for what (see the [Use of AI Tools](#use-of-ai-tools) policy).
+- **Never** enter protected health information into a public AI tool.
+- Class ends `{r} w10d2 %>% format("%B %d, %Y")`. **All coursework MUST be completed by `{r} last_day %>% format("%B %d, %Y")`.**
+:::
+:::::
+
+## Description {.sec-blue}
+
+Welcome to BSTA 504! This course introduces the ideas, practices, and applications of health data science in the context of public health and biomedical sciences. It focuses on the programming and workflow skills that health data work depends on: **the command line, version control, reproducible environments, relational databases and SQL, and Python.** You'll practice each skill on real and realistic health data, and use AI coding tools responsibly along the way.
+
+**Prerequisites:** BSTA 513 (Categorical Data Analysis) or BSTA 526 (R Programming for Health Data Science)
+
+**Format:** 10 weeks, two lessons per week (3 hours of class time per week). Each lesson pairs a short demonstration with hands-on work on a health dataset.
+
+### Course Learning Objectives
+
+By the end of this course, you should be able to...
+
+1.  Describe the data science life cycle and the main types of health data, and where each fits in a research workflow.
+2.  Use the Unix command line to inspect large files, run scripts, and work on a remote computer.
+3.  Manage and share code with Git and GitHub, including branches, pull requests, and code review.
+4.  Build a project that someone else can rerun, using renv and Docker.
+5.  Query relational health data with SQL, from both a database and R.
+6.  Read, write, and run Python code for common data tasks, and combine R and Python in one Quarto report.
+7.  Use AI coding tools to speed up work while checking their output and protecting private health information.
+
+## Instructor {.sec-green}
+
+**Dr. Nicky Wakim**\
+Vanport 622A\
+[wakim\@ohsu.edu](mailto:wakim@ohsu.edu)
+
+Office hours will be posted on the [course home page](index.qmd).
+
+## Materials {.sec-coral}
+
+### Textbooks
+
+All are free online.
+
+- [**Veridical Data Science**](https://vdsbook.com/) by Bin Yu and Rebecca Barter
+- [**Introduction to SQL**](https://intro-sql-fh.netlify.app/) (Fred Hutch)
+- [**Python for Data Analysis, 3rd edition**](https://wesmckinney.com/book/) by Wes McKinney
+
+<!-- TODO: Jessica's AI book suggestion (add title once confirmed):
+     https://research.ebsco.com/plink/6250701e-1995-34af-a3d6-14c41c48e4b5 -->
+
+### Additional free resources
+
+These are matched to the weeks they support.
+
+- [The Unix Shell (Software Carpentry)](https://swcarpentry.github.io/shell-novice/), for week 2
+- [Data Science at the Command Line](https://jeroenjanssens.com/dsatcl/) by Jeroen Janssens, for week 2
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan, for weeks 1 and 3
+- [renv documentation](https://rstudio.github.io/renv/), for week 4
+- [R for Data Science, 2nd edition](https://r4ds.hadley.nz/), for comparing R with Python in weeks 7 and 8
+- [Quarto guide](https://quarto.org/docs/guide/), throughout
+
+### Software and accounts
+
+Everything in this course is free; you don't need to buy any software, data, or subscriptions.
+
+| **Tool** | **Used for** | **Cost** |
+|:---|:---|:---|
+| R, and Positron or RStudio | All weeks | Free |
+| Quarto | Reports, all weeks | Free |
+| Git, and Git Bash on Windows | Command line and version control (weeks 2–3) | Free |
+| GitHub account and GitHub Education | Repositories, Codespaces, Copilot | Free for verified students |
+| Docker Desktop | Containers (week 4) | Free for education use |
+| DuckDB and SQLite | SQL (weeks 5–6) | Free |
+| Python, installed with uv or Miniforge | Weeks 7–8 | Free |
+| GitHub Copilot | AI coding (week 9) | Free with GitHub Education |
+
+If your only computer is a Chromebook or tablet, you can't run Docker locally. You'll use GitHub Codespaces, a free cloud Linux machine, for weeks 2 and 4.
+
+### Data
+
+All course data is public and needs no account or data use agreement: [NHANES](https://www.cdc.gov/nchs/nhanes/), [Synthea](https://synthetichealth.github.io/synthea/) synthetic EHR data, the [MIMIC-IV demo](https://physionet.org/content/mimic-iv-demo/), and open-access [PhysioNet](https://physionet.org/) datasets.
+
+## Grading & Requirements {.sec-pink}
+
+::::: purple
+::: purple-ttl
+Draft
+:::
+
+::: purple-cont
+The grading below is a proposal; the weights are not yet final.
+:::
+:::::
+
+| **Course activity** | **Due** | **Weight** | **Details** |
+|:---|:---|:--:|:---|
+| Week 1 setup assignment | `{r} setup %>% format("%m/%d")` | 5% | Accounts, software, and a working Git connection |
+| Weekly lab assignments | Weekly, weeks 2–9 | 45% | One per week, each submitted through GitHub |
+| Project checkpoints | `{r} check1 %>% format("%m/%d")` and `{r} check2 %>% format("%m/%d")` | 15% | Repo setup and data access (week 4); SQL and Python work in progress (week 8) |
+| Final project | `{r} proj %>% format("%m/%d")` | 25% | Reproducible repo, peer rerun (week 10, lesson 1), and presentation (week 10, lesson 2) |
+| Participation | Ongoing | 10% | In-class work and peer code review |
+
+Letter grades: A (≥93%), A- (90-92%), B+ (88-89%), B (83-87%), B- (80-82%), C+ (78-79%), C (73-77%), C- (70-72%), D (60-69%), F (\<60%).
+
+### Final Project
+
+In teams, you'll build a small analysis of public health data that someone else can rerun from scratch. The project must:
+
+- Live in a GitHub repository with a README, a clear folder structure, and a history of commits from every team member
+- Lock its R packages with renv and run inside a Docker container
+- Get its data with SQL, Python, or both
+- Report results in a Quarto document
+- Document any AI tools used and how their output was checked
+
+In week 10, each team reruns another team's project from GitHub and reports what worked and what didn't.
+
+## Week 1 Setup Assignment {#week-1-setup-assignment .sec-blue}
+
+This is the first assignment of the course. It also shows how assignments are set up and submitted.
+
+**Due `{r} setup %>% format("%B %d")` (end of week 1).** Apply for GitHub Education at or before the first lesson, because approval can take several days.
+
+### Accounts
+
+1.  Create a GitHub account (or use an existing one) with a professional username, and add your school email.
+2.  Apply for [GitHub Education](https://education.github.com/students) with your school email and proof of enrollment.
+3.  Once approved, activate Copilot Student from your GitHub Education benefits page.
+
+### Software
+
+4.  Install R, Positron or RStudio, Quarto, and Git.
+5.  Install Python with uv or Miniforge.
+6.  Confirm your laptop can run Docker Desktop (Windows 10/11 or a recent macOS). Don't install it until week 4.
+
+### Connect and test
+
+7.  Connect Git to GitHub from R with `usethis::use_git_config()`, `usethis::create_github_token()`, and `gitcreds::gitcreds_set()`.
+8.  Run `usethis::git_sitrep()` and check that it reports no problems.
+9.  Launch a GitHub Codespace, open its terminal, and run `ls`.
+
+::::: green
+::: green-ttl
+Submit
+:::
+
+::: green-cont
+- Your GitHub username
+- A screenshot of your GitHub Education approval (or pending status)
+- The output of `usethis::git_sitrep()`
+- Your operating system
+- Any step that didn't work
+:::
+:::::
+
+## Course Policies {.sec-green}
+
+### Use of AI Tools {#use-of-ai-tools}
+
+AI coding tools are allowed, and we'll learn to use them well in week 9. When you use them:
+
+- **You're responsible for every line.** Check all AI-generated code and its output before you submit it.
+- **Say what you used.** Note in each assignment which tools you used and for what.
+- **Protect private health information.**
+
+::::: red
+::: red-ttl
+Never allowed
+:::
+
+::: red-cont
+- **Entering protected health information into a public AI tool**
+:::
+:::::
+
+### Late Work Policy
+
+To be announced.
+
+### Academic Integrity
+
+As a PSU/OHSU student, you're expected to act with professionalism and integrity. Academic misconduct (plagiarism, cheating, fabricating data, falsifying records, or helping others do so) will be taken seriously. Your submitted work should reflect your own effort, and any resources you use should be cited.
+
+## Schedule {.sec-coral}
+
+See the [Schedule page](schedule.qmd). I may adjust it if we need more or less time on a topic.
+
+## Student Resources {.sec-pink}
+
+### Student Wellness {#student-wellness}
+
+I care about your physical and emotional well-being. If a health issue is affecting your work, or you'd like help connecting with resources, please reach out.
+
+- **OHSU:** [Behavioral Health](https://www.ohsu.edu/education/student-health-services) (**all visits are free**) and [Student Health and Wellness](https://www.ohsu.edu/education/student-health-and-wellness), 503-494-8665
+- **PSU:** [Student Health and Counseling (SHAC)](https://www.pdx.edu/health-counseling/), 503-725-2800. OHSU students can also use PSU's [Counseling Services](https://www.pdx.edu/health-counseling/counseling).
+- [SPH Health and Wellness Resources](https://ohsu-psu-sph.org/health_and_wellness/)
+
+### Food Insecurity
+
+- PSU's [Free Food Market](https://www.pdx.edu/student-access-center/free-food-market), second Monday of each month
+- [SNAP for college students](https://oregonhunger.org/snap-for-students/): SNAP provides money for food. If you're a single person making less than \$2,609/month, you may be eligible. The state's [Oregon food benefits page](https://www.oregon.gov/odhs/food/pages/default.aspx) has more on how to apply.
+
+### Students with Children
+
+PSU's [Resource Center for Students with Children](https://www.pdx.edu/students-with-children/) offers family-friendly study spaces, baby starter packs, free kids' clothing, and childcare financial resources.
+
+### Writing Support
+
+- **SPH Writing Support:** one-on-one help from Leslie Bienen, MFA, DVM, on papers, dissertations, applications, grants, and more. Email [writingsupportsph\@pdx.edu](mailto:writingsupportsph@pdx.edu) or book on [Calendly](https://calendly.com/writingsupportsph/writing-meeting).
+- **Grammarly:** SPH students get a free subscription. Sign up with your PSU login through this [form](https://docs.google.com/forms/d/1IQWFsARrTJlasK2a5JTonR4ygr8MxqIzbh_bAxKmWWI/edit?ts=614ce07a).
+
+## SPH and OHSU Policies {.sec-blue}
+
+See the Brightspace syllabus for additional SPH and OHSU policies and resources.
