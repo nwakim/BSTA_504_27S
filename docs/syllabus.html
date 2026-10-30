@@ -383,6 +383,7 @@ Vanport 622A<br>
 <p>The grading below is a proposal; the weights are not yet final.</p>
 </div>
 </div>
+<div style="overflow-x: auto;">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -431,6 +432,7 @@ Vanport 622A<br>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Letter grades: A (≥93%), A- (90-92%), B+ (88-89%), B (83-87%), B- (80-82%), C+ (78-79%), C (73-77%), C- (70-72%), D (60-69%), F (&lt;60%).</p>
 <section id="final-project" class="level3">
 <h3 class="anchored" data-anchor-id="final-project">Final Project</h3>
@@ -520,7 +522,192 @@ Vanport 622A<br>
 </section>
 <section id="schedule" class="level2 sec3">
 <h2 class="sec3 anchored" data-anchor-id="schedule">Schedule</h2>
-<p>See the <a href="./schedule.html">Schedule page</a>. I may adjust it if we need more or less time on a topic.</p>
+<p>The course runs 10 weeks with two lessons a week. SQL and Python each get two full weeks. See the <a href="./schedule.html">Schedule page</a> for dates, readings, and due dates. I may adjust it if we need more or less time on a topic.</p>
+<div style="overflow-x: auto;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Week</strong></th>
+<th style="text-align: left;"><strong>Theme</strong></th>
+<th style="text-align: left;"><strong>Lesson</strong></th>
+<th style="text-align: left;"><strong>Topic</strong></th>
+<th style="text-align: left;"><strong>Data engaged</strong></th>
+<th style="text-align: left;"><strong>Focus</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Introduction to health data science</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Health data science workflows</td>
+<td style="text-align: left;">Course examples from NHANES</td>
+<td style="text-align: left;">Welcome and syllabus. The data science life cycle and what a reproducible workflow looks like. Set up R projects and Quarto.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Introduction to health data science</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The health data landscape</td>
+<td style="text-align: left;">Short samples of EHR, claims, genomics, imaging, and wearable data</td>
+<td style="text-align: left;">Where each kind of data comes from, its usual formats, and who on a research team works with it.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Where computing happens</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">The Unix command line</td>
+<td style="text-align: left;">Large CSV and text files (e.g., NHANES exports)</td>
+<td style="text-align: left;">Navigating files, pipes, and <code>grep</code>/<code>head</code>/<code>wc</code> to inspect data too big to open in Excel.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Where computing happens</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Scripts and remote computing</td>
+<td style="text-align: left;">The same files on a remote server</td>
+<td style="text-align: left;">Writing shell scripts, using <code>ssh</code> to reach a server, HPC, or the cloud, and moving files there.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Collaborating on code</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Git basics</td>
+<td style="text-align: left;">Students’ own project repos</td>
+<td style="text-align: left;">Commits, history, <code>.gitignore</code> (keeping data and PHI out of repos), and pushing to GitHub.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Collaborating on code</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Collaborating on GitHub</td>
+<td style="text-align: left;">A shared team repo</td>
+<td style="text-align: left;">Branches, pull requests, code review, and resolving a merge conflict.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Reproducibility</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">R environments with renv</td>
+<td style="text-align: left;">An existing course analysis</td>
+<td style="text-align: left;">Locking package versions so a project reruns the same way months later.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Reproducibility</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Docker containers</td>
+<td style="text-align: left;">The same analysis, containerized</td>
+<td style="text-align: left;">Images, containers, and running someone else’s project with one command.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Relational data</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Relational data</td>
+<td style="text-align: left;">Synthetic EHR tables (Synthea): patients, encounters, conditions</td>
+<td style="text-align: left;">Tables, primary and foreign keys, and how a database differs from a data frame.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Relational data</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">SQL queries</td>
+<td style="text-align: left;">The same Synthea tables in DuckDB</td>
+<td style="text-align: left;">SELECT, WHERE, joins, and GROUP BY.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Querying real health data</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Advanced SQL</td>
+<td style="text-align: left;">MIMIC-IV demo data</td>
+<td style="text-align: left;">Subqueries, window functions, and building an analysis cohort with SQL.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Querying real health data</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">SQL from R and larger-than-memory data</td>
+<td style="text-align: left;">MIMIC-IV demo saved as Parquet</td>
+<td style="text-align: left;">DBI/dbplyr, and querying data that doesn’t fit in memory with DuckDB and Arrow.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Python as a second language</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Python fundamentals for R users</td>
+<td style="text-align: left;">Small NHANES extracts</td>
+<td style="text-align: left;">Syntax, data types, lists and dictionaries, and functions, mapped onto R.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Python as a second language</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Data frames in Python</td>
+<td style="text-align: left;">NHANES</td>
+<td style="text-align: left;">pandas/polars: filtering, grouping, and joins, side by side with dplyr.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Python in practice</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">A Python analysis pipeline</td>
+<td style="text-align: left;">Wearable time-series data (an open-access PhysioNet dataset)</td>
+<td style="text-align: left;">Wrangling, plotting, and summarizing in Python from start to finish.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Python in practice</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Python in a reproducible workflow</td>
+<td style="text-align: left;">The same wearable data</td>
+<td style="text-align: left;">Python virtual environments, and mixing R and Python in one Quarto document.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Working with AI</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">AI coding assistants</td>
+<td style="text-align: left;">Students’ own SQL and Python code from earlier weeks</td>
+<td style="text-align: left;">Prompting, checking generated code, and catching wrong answers.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Working with AI</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">AI agents and responsible use</td>
+<td style="text-align: left;">The team project repo</td>
+<td style="text-align: left;">Agentic tools, data privacy (no PHI in public tools), and documenting AI use for reproducibility.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Putting it together</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Project work and peer review</td>
+<td style="text-align: left;">Each team’s chosen data</td>
+<td style="text-align: left;">Teams rerun another team’s project from GitHub and give feedback.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Putting it together</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Project presentations</td>
+<td style="text-align: left;">Each team’s chosen data</td>
+<td style="text-align: left;">Present a project that is reproducible end to end and uses SQL and/or Python.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Weeks 5 and 6 use EHR data only as practice material for SQL, not to teach EHR methods.</p>
 </section>
 <section id="student-resources" class="level2 sec4">
 <h2 class="sec4 anchored" data-anchor-id="student-resources">Student Resources</h2>

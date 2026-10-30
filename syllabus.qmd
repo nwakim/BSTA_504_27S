@@ -177,6 +177,7 @@ The grading below is a proposal; the weights are not yet final.
 :::
 :::::
 
+::: {style="overflow-x: auto;"}
 | **Course activity** | **Due** | **Weight** | **Details** |
 |:---|:---|:--:|:---|
 | Week 1 setup assignment | `{r} setup %>% format("%m/%d")` | 5% | Accounts, software, and a working Git connection |
@@ -184,6 +185,7 @@ The grading below is a proposal; the weights are not yet final.
 | Project checkpoints | `{r} check1 %>% format("%m/%d")` and `{r} check2 %>% format("%m/%d")` | 15% | Repo setup and data access (week 4); SQL and Python work in progress (week 8) |
 | Final project | `{r} proj %>% format("%m/%d")` | 25% | Reproducible repo, peer rerun (week 10, lesson 1), and presentation (week 10, lesson 2) |
 | Participation | Ongoing | 10% | In-class work and peer code review |
+:::
 
 Letter grades: A (≥93%), A- (90-92%), B+ (88-89%), B (83-87%), B- (80-82%), C+ (78-79%), C (73-77%), C- (70-72%), D (60-69%), F (\<60%).
 
@@ -267,7 +269,34 @@ As a PSU/OHSU student, you're expected to act with professionalism and integrity
 
 ## Schedule {.sec3}
 
-See the [Schedule page](schedule.qmd). I may adjust it if we need more or less time on a topic.
+The course runs 10 weeks with two lessons a week. SQL and Python each get two full weeks. See the [Schedule page](schedule.qmd) for dates, readings, and due dates. I may adjust it if we need more or less time on a topic.
+
+::: {style="overflow-x: auto;"}
+| **Week** | **Theme** | **Lesson** | **Topic** | **Data engaged** | **Focus** |
+|:-----|:-----------------|:-----|:-------------------|:---------------------|:---------------------------------|
+| 1 | Introduction to health data science | 1 | Health data science workflows | Course examples from NHANES | Welcome and syllabus. The data science life cycle and what a reproducible workflow looks like. Set up R projects and Quarto. |
+| 1 | Introduction to health data science | 2 | The health data landscape | Short samples of EHR, claims, genomics, imaging, and wearable data | Where each kind of data comes from, its usual formats, and who on a research team works with it. |
+| 2 | Where computing happens | 1 | The Unix command line | Large CSV and text files (e.g., NHANES exports) | Navigating files, pipes, and `grep`/`head`/`wc` to inspect data too big to open in Excel. |
+| 2 | Where computing happens | 2 | Scripts and remote computing | The same files on a remote server | Writing shell scripts, using `ssh` to reach a server, HPC, or the cloud, and moving files there. |
+| 3 | Collaborating on code | 1 | Git basics | Students' own project repos | Commits, history, `.gitignore` (keeping data and PHI out of repos), and pushing to GitHub. |
+| 3 | Collaborating on code | 2 | Collaborating on GitHub | A shared team repo | Branches, pull requests, code review, and resolving a merge conflict. |
+| 4 | Reproducibility | 1 | R environments with renv | An existing course analysis | Locking package versions so a project reruns the same way months later. |
+| 4 | Reproducibility | 2 | Docker containers | The same analysis, containerized | Images, containers, and running someone else's project with one command. |
+| 5 | Relational data | 1 | Relational data | Synthetic EHR tables (Synthea): patients, encounters, conditions | Tables, primary and foreign keys, and how a database differs from a data frame. |
+| 5 | Relational data | 2 | SQL queries | The same Synthea tables in DuckDB | SELECT, WHERE, joins, and GROUP BY. |
+| 6 | Querying real health data | 1 | Advanced SQL | MIMIC-IV demo data | Subqueries, window functions, and building an analysis cohort with SQL. |
+| 6 | Querying real health data | 2 | SQL from R and larger-than-memory data | MIMIC-IV demo saved as Parquet | DBI/dbplyr, and querying data that doesn't fit in memory with DuckDB and Arrow. |
+| 7 | Python as a second language | 1 | Python fundamentals for R users | Small NHANES extracts | Syntax, data types, lists and dictionaries, and functions, mapped onto R. |
+| 7 | Python as a second language | 2 | Data frames in Python | NHANES | pandas/polars: filtering, grouping, and joins, side by side with dplyr. |
+| 8 | Python in practice | 1 | A Python analysis pipeline | Wearable time-series data (an open-access PhysioNet dataset) | Wrangling, plotting, and summarizing in Python from start to finish. |
+| 8 | Python in practice | 2 | Python in a reproducible workflow | The same wearable data | Python virtual environments, and mixing R and Python in one Quarto document. |
+| 9 | Working with AI | 1 | AI coding assistants | Students' own SQL and Python code from earlier weeks | Prompting, checking generated code, and catching wrong answers. |
+| 9 | Working with AI | 2 | AI agents and responsible use | The team project repo | Agentic tools, data privacy (no PHI in public tools), and documenting AI use for reproducibility. |
+| 10 | Putting it together | 1 | Project work and peer review | Each team's chosen data | Teams rerun another team's project from GitHub and give feedback. |
+| 10 | Putting it together | 2 | Project presentations | Each team's chosen data | Present a project that is reproducible end to end and uses SQL and/or Python. |
+:::
+
+Weeks 5 and 6 use EHR data only as practice material for SQL, not to teach EHR methods.
 
 ## Student Resources {.sec4}
 

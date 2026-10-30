@@ -168,6 +168,9 @@ ul.task-list li input[type="checkbox"] {
   height: 5px;
 }
 
+/* ---- Scroll sideways on small screens instead of widening the page ---- */
+.sched { overflow-x: auto; }
+
 /* ---- Blank separator rows: any row whose cells are all empty turns blue ---- */
 .sched table tbody tr:not(:has(td:not(:empty))) td {
   background-color: #7A5590 !important;
